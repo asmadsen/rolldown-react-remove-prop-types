@@ -1,0 +1,54 @@
+{
+	"name": "rollup-react-remove-prop-types",
+	"version": "0.1.0",
+	"description": "Rollup plugin to remove React PropTypes from production builds",
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"lint": "biome check .",
+		"format": "biome format --write .",
+		"typecheck": "tsc --noEmit"
+	},
+	"keywords": [
+		"rollup",
+		"plugin",
+		"react",
+		"proptypes",
+		"optimization"
+	],
+	"author": "",
+	"license": "MIT",
+	"packageManager": "pnpm@10.18.2",
+	"peerDependencies": {
+		"rollup": "^3.0.0 || ^4.0.0"
+	},
+	"dependencies": {
+		"@rollup/pluginutils": "^5.3.0",
+		"acorn": "^8.15.0",
+		"estree-walker": "^3.0.3",
+		"magic-string": "^0.30.21"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.2",
+		"@total-typescript/tsconfig": "^1.0.4",
+		"@types/estree": "^1.0.8",
+		"acorn-jsx": "^5.3.2",
+		"rollup": "^4.52.5",
+		"tsdown": "^0.15.11",
+		"typescript": "^5.9.3"
+	}
+}
