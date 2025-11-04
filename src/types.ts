@@ -1,8 +1,9 @@
-import type { FilterPattern } from "@rollup/pluginutils";
-
 export type TransformMode = "remove" | "wrap" | "unsafe-wrap";
 
-export interface PluginOptions {
+type StringOrRegExp = string | RegExp;
+type MaybeArray<T> = T | T[];
+
+export type PluginOptions = {
 	/**
 	 * How to handle propTypes removal:
 	 * - 'remove': Delete propTypes completely (default)
@@ -20,8 +21,8 @@ export interface PluginOptions {
 	/**
 	 * File patterns to include/exclude
 	 */
-	include?: FilterPattern;
-	exclude?: FilterPattern;
+	include?: MaybeArray<StringOrRegExp>;
+	exclude?: MaybeArray<StringOrRegExp>;
 
 	/**
 	 * Filenames matching these patterns will be ignored
@@ -40,7 +41,7 @@ export interface PluginOptions {
 	 * Patterns are joined with | to create a RegExp
 	 */
 	classNameMatchers?: string[];
-}
+};
 
 export interface NormalizedOptions {
 	mode: TransformMode;

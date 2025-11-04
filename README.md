@@ -1,24 +1,49 @@
-# rollup-react-remove-prop-types
+# rolldown-react-remove-prop-types
 
-> Rollup plugin to remove React PropTypes from production builds
+> Rolldown plugin to remove React PropTypes from production builds
 
-Port of [babel-plugin-transform-react-remove-prop-types](https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types) for Rollup.
+Port of [babel-plugin-transform-react-remove-prop-types](https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types) for Rolldown (with Rollup compatibility).
+
+## Features
+
+- 🚀 **Primary support for Rolldown** with Plugin Hook Filters
+- 🔄 **Rollup compatible** via adapter export
+- ⚡ **Fast** - Uses Rolldown's native performance
+- 🎯 **Precise** - Removes only PropTypes, keeps everything else
+- 🔧 **Flexible** - Multiple removal modes
 
 ## Installation
 
 ```bash
-npm install --save-dev rollup-react-remove-prop-types
+npm install --save-dev rolldown-react-remove-prop-types
 # or
-pnpm add -D rollup-react-remove-prop-types
+pnpm add -D rolldown-react-remove-prop-types
 # or
-yarn add -D rollup-react-remove-prop-types
+yarn add -D rolldown-react-remove-prop-types
 ```
 
 ## Usage
 
+### Rolldown
+
+```js
+// rolldown.config.js
+import removePropTypes from 'rolldown-react-remove-prop-types';
+
+export default {
+  plugins: [
+    removePropTypes({
+      mode: 'remove', // default
+    }),
+  ],
+};
+```
+
+### Rollup
+
 ```js
 // rollup.config.js
-import removePropTypes from 'rollup-react-remove-prop-types';
+import removePropTypes from 'rolldown-react-remove-prop-types/rollup';
 
 export default {
   plugins: [

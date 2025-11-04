@@ -3,7 +3,6 @@ import type {
 	CallExpression,
 	FunctionDeclaration,
 	Node,
-	ReturnStatement,
 	VariableDeclarator,
 } from "estree";
 import { walk } from "estree-walker";
@@ -55,35 +54,8 @@ function returnsJSXElement(node: Node): boolean {
 		return hasJSXOrReactCreateElement((node as ArrowFunctionExpression).body);
 	}
 
-	// Check for explicit return statements
-	let returnsJSX = false;
-
-	walk(node as any, {
-		enter(childNode: any) {
-			if (childNode.type === "ReturnStatement") {
-				const returnStmt = childNode as ReturnStatement;
-				if (
-					returnStmt.argument &&
-					hasJSXOrReactCreateElement(returnStmt.argument)
-				) {
-					returnsJSX = true;
-					this.skip();
-				}
-			}
-
-			// Don't traverse into nested functions
-			if (
-				childNode !== node &&
-				(childNode.type === "FunctionDeclaration" ||
-					childNode.type === "FunctionExpression" ||
-					childNode.type === "ArrowFunctionExpression")
-			) {
-				this.skip();
-			}
-		},
-	});
-
-	return returnsJSX;
+	// Check if the function or any nested code contains JSX
+	return hasJSXOrReactCreateElement(node);
 }
 
 /**
@@ -107,6 +79,23 @@ export function isStatelessComponent(
 			init.type === "FunctionExpression"
 		) {
 			return returnsJSXElement(init);
+		}
+
+		// React.memo, React.forwardRef, etc.
+		if (init.type === "CallExpression") {
+			const callee = init.callee;
+			// Check if it's React.memo, React.forwardRef, etc.
+			if (
+				matchesPattern(callee, "React.memo") ||
+				matchesPattern(callee, "React.forwardRef") ||
+				(isIdentifier(callee) &&
+					(callee.name === "memo" || callee.name === "forwardRef"))
+			) {
+				// Check if the first argument contains JSX
+				if (init.arguments[0]) {
+					return hasJSXOrReactCreateElement(init.arguments[0]);
+				}
+			}
 		}
 	}
 

@@ -1,0 +1,6415 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'rolldown' bundler > 'additional-libraries' > should transform correctly in 'remove' mode 1`] = `
+"import "prop-types";
+import { Component } from "react";
+import "react-immutable-proptypes";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/additional-libraries/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" and ",
+			this.props.friends.join(", "),
+			" to",
+			" ",
+			this.state.appName
+		] });
+	}
+};
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'additional-libraries' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import ImmutablePropTypes from "react-immutable-proptypes";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/additional-libraries/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" and ",
+			this.props.friends.join(", "),
+			" to",
+			" ",
+			this.state.appName
+		] });
+	}
+};
+process.env.NODE_ENV !== "production" ? Greeting.propTypes = {
+	name: PropTypes.string.isRequired,
+	friends: ImmutablePropTypes.list.isRequired
+} : void 0;
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'additional-libraries' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import ImmutablePropTypes from "react-immutable-proptypes";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/additional-libraries/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" and ",
+			this.props.friends.join(", "),
+			" to",
+			" ",
+			this.state.appName
+		] });
+	}
+};
+Greeting.propTypes = process.env.NODE_ENV !== "production" ? {
+	name: PropTypes.string.isRequired,
+	friends: ImmutablePropTypes.list.isRequired
+} : {};
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'additional-libraries' > should transform correctly with fixture options 1`] = `
+"import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/additional-libraries/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" and ",
+			this.props.friends.join(", "),
+			" to",
+			" ",
+			this.state.appName
+		] });
+	}
+};
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'additional-libraries-regexp' > should transform correctly in 'remove' mode 1`] = `
+"import "prop-types";
+import { Component } from "react";
+import "./custom-prop-types";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/additional-libraries-regexp/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" and ",
+			this.props.friends.join(", "),
+			" to",
+			" ",
+			this.state.appName
+		] });
+	}
+};
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'additional-libraries-regexp' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import CustomPropTypes from "./custom-prop-types";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/additional-libraries-regexp/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" and ",
+			this.props.friends.join(", "),
+			" to",
+			" ",
+			this.state.appName
+		] });
+	}
+};
+process.env.NODE_ENV !== "production" ? Greeting.propTypes = {
+	name: PropTypes.string.isRequired,
+	friends: CustomPropTypes.customValidator
+} : void 0;
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'additional-libraries-regexp' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import CustomPropTypes from "./custom-prop-types";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/additional-libraries-regexp/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" and ",
+			this.props.friends.join(", "),
+			" to",
+			" ",
+			this.state.appName
+		] });
+	}
+};
+Greeting.propTypes = process.env.NODE_ENV !== "production" ? {
+	name: PropTypes.string.isRequired,
+	friends: CustomPropTypes.customValidator
+} : {};
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'additional-libraries-regexp' > should transform correctly with fixture options 1`] = `
+"import "prop-types";
+import { Component } from "react";
+import "./custom-prop-types";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/additional-libraries-regexp/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" and ",
+			this.props.friends.join(", "),
+			" to",
+			" ",
+			this.state.appName
+		] });
+	}
+};
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-169' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/bugfix-169/actual.js
+var Test = class extends React.Component {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-169' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/bugfix-169/actual.js
+var Test = class extends React.Component {};
+process.env.NODE_ENV !== "production" ? Test.propTypes = { columns: PropTypes.shape({ [constants.TEST]: STRING_PROP_TYPE }) } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-169' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/bugfix-169/actual.js
+var Test = class extends React.Component {};
+Test.propTypes = process.env.NODE_ENV !== "production" ? { columns: PropTypes.shape({ [constants.TEST]: STRING_PROP_TYPE }) } : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-169' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/bugfix-169/actual.js
+var Test = class extends React.Component {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-175' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from "prop-types";
+import React from "react";
+
+//#region test/fixtures/bugfix-175/actual.js
+const sharedPropType = PropTypes.number;
+var Foo = class extends React.Component {};
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-175' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import React from "react";
+
+//#region test/fixtures/bugfix-175/actual.js
+const sharedPropType = PropTypes.number;
+var Foo = class extends React.Component {};
+process.env.NODE_ENV !== "production" ? Foo.propTypes = { bar: sharedPropType } : void 0;
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-175' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import React from "react";
+
+//#region test/fixtures/bugfix-175/actual.js
+const sharedPropType = PropTypes.number;
+var Foo = class extends React.Component {};
+Foo.propTypes = process.env.NODE_ENV !== "production" ? { bar: sharedPropType } : {};
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-175' > should transform correctly with fixture options 1`] = `
+"import PropTypes from "prop-types";
+import React from "react";
+
+//#region test/fixtures/bugfix-175/actual.js
+const sharedPropType = PropTypes.number;
+var Foo = class extends React.Component {};
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-assignment' > should transform correctly in 'remove' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/bugfix-assignment/actual.js
+var App = { init: function(assets) {
+	assets = assets || {};
+	if (assets.templates) {
+		TemplateStore.init(assets.templates);
+	}
+} };
+const FormattedPlural = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? void 0 : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-assignment' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/bugfix-assignment/actual.js
+var App = { init: function(assets) {
+	assets = assets || {};
+	if (assets.templates) {
+		TemplateStore.init(assets.templates);
+	}
+} };
+const FormattedPlural = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? void 0 : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-assignment' > should transform correctly in 'wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/bugfix-assignment/actual.js
+var App = { init: function(assets) {
+	assets = assets || {};
+	if (assets.templates) {
+		TemplateStore.init(assets.templates);
+	}
+} };
+const FormattedPlural = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? FormattedPlural.propTypes = process.env.NODE_ENV !== "production" ? { value: PropTypes.any.isRequired } : {} : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'bugfix-assignment' > should transform correctly with fixture options 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/bugfix-assignment/actual.js
+var App = { init: function(assets) {
+	assets = assets || {};
+	if (assets.templates) {
+		TemplateStore.init(assets.templates);
+	}
+} };
+const FormattedPlural = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? void 0 : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'class-comment-annotation' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from "prop-types";
+import "react";
+import ParentComponent from "./Parent";
+
+//#region test/fixtures/class-comment-annotation/actual.js
+var Foo = class extends ParentComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string.isRequired };
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'class-comment-annotation' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import "react";
+import ParentComponent from "./Parent";
+
+//#region test/fixtures/class-comment-annotation/actual.js
+var Foo = class extends ParentComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string.isRequired };
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'class-comment-annotation' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import "react";
+import ParentComponent from "./Parent";
+
+//#region test/fixtures/class-comment-annotation/actual.js
+var Foo = class extends ParentComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string.isRequired };
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'class-comment-annotation' > should transform correctly with fixture options 1`] = `
+"import PropTypes from "prop-types";
+import "react";
+import ParentComponent from "./Parent";
+
+//#region test/fixtures/class-comment-annotation/actual.js
+var Foo = class extends ParentComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string.isRequired };
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'class-name-matchers' > should transform correctly in 'remove' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/class-name-matchers/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'class-name-matchers' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/class-name-matchers/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'class-name-matchers' > should transform correctly in 'wrap' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/class-name-matchers/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'class-name-matchers' > should transform correctly with fixture options 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/class-name-matchers/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'class-name-matchers-no-match' > should transform correctly in 'remove' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/class-name-matchers-no-match/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'class-name-matchers-no-match' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/class-name-matchers-no-match/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'class-name-matchers-no-match' > should transform correctly in 'wrap' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/class-name-matchers-no-match/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'class-name-matchers-no-match' > should transform correctly with fixture options 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/class-name-matchers-no-match/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+Foo.propTypes = { bar: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'const-in-anonymous-validator' > should transform correctly in 'remove' mode 1`] = `
+"import "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/const-in-anonymous-validator/actual.js
+const Component = () => /* @__PURE__ */ jsx("div", {});
+const referencedPropTypes = { variant3: () => {
+	const willBeWrapped = 1;
+	return null;
+} };
+var actual_default = Component;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'const-in-anonymous-validator' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { PropTypes } from "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/const-in-anonymous-validator/actual.js
+const Component = () => /* @__PURE__ */ jsx("div", {});
+const referencedPropTypes = { variant3: () => {
+	const willBeWrapped = 1;
+	return null;
+} };
+process.env.NODE_ENV !== "production" ? Component.propTypes = {
+	variant1: (props) => {
+		const variants = [null];
+		return variantſ[0];
+	},
+	variant2: chainPropTypes(PropTypes.oneOf(["foo"]), (props) => {
+		const deprecatedVariants = [
+			"display4",
+			"display3",
+			"display2",
+			"display1",
+			"headline",
+			"title",
+			"subheading"
+		];
+		return null;
+	}),
+	...referencedPropTypes
+} : void 0;
+var actual_default = Component;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'const-in-anonymous-validator' > should transform correctly in 'wrap' mode 1`] = `
+"import { PropTypes } from "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/const-in-anonymous-validator/actual.js
+const Component = () => /* @__PURE__ */ jsx("div", {});
+const referencedPropTypes = { variant3: () => {
+	const willBeWrapped = 1;
+	return null;
+} };
+Component.propTypes = process.env.NODE_ENV !== "production" ? {
+	variant1: (props) => {
+		const variants = [null];
+		return variantſ[0];
+	},
+	variant2: chainPropTypes(PropTypes.oneOf(["foo"]), (props) => {
+		const deprecatedVariants = [
+			"display4",
+			"display3",
+			"display2",
+			"display1",
+			"headline",
+			"title",
+			"subheading"
+		];
+		return null;
+	}),
+	...referencedPropTypes
+} : {};
+var actual_default = Component;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'const-in-anonymous-validator' > should transform correctly with fixture options 1`] = `
+"import "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/const-in-anonymous-validator/actual.js
+const Component = () => /* @__PURE__ */ jsx("div", {});
+const referencedPropTypes = { variant3: () => {
+	const willBeWrapped = 1;
+	return null;
+} };
+var actual_default = Component;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'create-class' > should transform correctly in 'remove' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/create-class/actual.js
+var _react2 = __require("react");
+var PropTypes = __require("prop-types");
+var Class1 = _react2.default.createClass({
+	displayName: "Class1",
+	propTypes: { foo: PropTypes.string }
+});
+var Class2 = _react2.default.createClass({
+	displayName: "Class2",
+	propTypes: { foo: _react2.default.PropTypes.string }
+});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'create-class' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/create-class/actual.js
+var _react2 = __require("react");
+var PropTypes = __require("prop-types");
+var Class1 = _react2.default.createClass({
+	displayName: "Class1",
+	propTypes: { foo: PropTypes.string }
+});
+var Class2 = _react2.default.createClass({
+	displayName: "Class2",
+	propTypes: { foo: _react2.default.PropTypes.string }
+});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'create-class' > should transform correctly in 'wrap' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/create-class/actual.js
+var _react2 = __require("react");
+var PropTypes = __require("prop-types");
+var Class1 = _react2.default.createClass({
+	displayName: "Class1",
+	propTypes: { foo: PropTypes.string }
+});
+var Class2 = _react2.default.createClass({
+	displayName: "Class2",
+	propTypes: { foo: _react2.default.PropTypes.string }
+});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'create-class' > should transform correctly with fixture options 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/create-class/actual.js
+var _react2 = __require("react");
+var PropTypes = __require("prop-types");
+var Class1 = _react2.default.createClass({
+	displayName: "Class1",
+	propTypes: { foo: PropTypes.string }
+});
+var Class2 = _react2.default.createClass({
+	displayName: "Class2",
+	propTypes: { foo: _react2.default.PropTypes.string }
+});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'dont-remove-used-import' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/dont-remove-used-import/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" to ",
+			this.state.appName
+		] });
+	}
+};
+Greeting.contextTypes = { store: PropTypes.object };
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'dont-remove-used-import' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/dont-remove-used-import/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" to ",
+			this.state.appName
+		] });
+	}
+};
+process.env.NODE_ENV !== "production" ? Greeting.propTypes = { name: PropTypes.string.isRequired } : void 0;
+Greeting.contextTypes = { store: PropTypes.object };
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'dont-remove-used-import' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/dont-remove-used-import/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" to ",
+			this.state.appName
+		] });
+	}
+};
+Greeting.propTypes = process.env.NODE_ENV !== "production" ? { name: PropTypes.string.isRequired } : {};
+Greeting.contextTypes = { store: PropTypes.object };
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'dont-remove-used-import' > should transform correctly with fixture options 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/dont-remove-used-import/actual.js
+var Greeting = class extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = { appName };
+	}
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: [
+			"Welcome ",
+			this.props.name,
+			" to ",
+			this.state.appName
+		] });
+	}
+};
+Greeting.contextTypes = { store: PropTypes.object };
+
+//#endregion
+export { Greeting as default };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+var Foo2 = class extends React.PureComponent {
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = { bar1: PropTypes.string } : void 0;
+var Foo2 = class extends React.PureComponent {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = { bar2: PropTypes.string } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? { bar1: PropTypes.string } : {};
+var Foo2 = class extends React.PureComponent {
+	render() {}
+};
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? { bar2: PropTypes.string } : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/es-class-assign-property/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+var Foo2 = class extends React.PureComponent {
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property-variable' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property-variable/actual.js
+const propTypes = { foo: PropTypes.string };
+var Foo = class extends React.Component {
+	render() {}
+};
+var Getter = class extends React.Component {
+	get foo() {
+		return { foo: PropTypes.string };
+	}
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property-variable' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property-variable/actual.js
+const propTypes = { foo: PropTypes.string };
+var Foo = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo.propTypes = propTypes : void 0;
+var Getter = class extends React.Component {
+	get foo() {
+		return { foo: PropTypes.string };
+	}
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Getter.propTypes = Getter.foo : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property-variable' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property-variable/actual.js
+const propTypes = { foo: PropTypes.string };
+var Foo = class extends React.Component {
+	render() {}
+};
+Foo.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+var Getter = class extends React.Component {
+	get foo() {
+		return { foo: PropTypes.string };
+	}
+	render() {}
+};
+Getter.propTypes = process.env.NODE_ENV !== "production" ? Getter.foo : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property-variable' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/es-class-assign-property-variable/actual.js
+const propTypes = { foo: PropTypes.string };
+var Foo = class extends React.Component {
+	render() {}
+};
+var Getter = class extends React.Component {
+	get foo() {
+		return { foo: PropTypes.string };
+	}
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property-variable-exp…' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property-variable-export/actual.js
+const propTypes = { foo: PropTypes.string };
+var Foo = class extends React.Component {
+	render() {}
+};
+
+//#endregion
+export { propTypes };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property-variable-exp…' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property-variable-export/actual.js
+const propTypes = { foo: PropTypes.string };
+var Foo = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo.propTypes = propTypes : void 0;
+
+//#endregion
+export { propTypes };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property-variable-exp…' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/es-class-assign-property-variable-export/actual.js
+const propTypes = { foo: PropTypes.string };
+var Foo = class extends React.Component {
+	render() {}
+};
+Foo.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+
+//#endregion
+export { propTypes };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-assign-property-variable-exp…' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/es-class-assign-property-variable-export/actual.js
+const propTypes = { foo: PropTypes.string };
+var Foo = class extends React.Component {
+	render() {}
+};
+
+//#endregion
+export { propTypes };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-component' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/es-class-extend-component/actual.js
+var Foo1 = class extends Component {
+	render() {}
+};
+var Foo2 = class extends Component {
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-component' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/es-class-extend-component/actual.js
+var Foo1 = class extends Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = { foo1: PropTypes.string } : void 0;
+var Foo2 = class extends Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = { foo2: PropTypes.string } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-component' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/es-class-extend-component/actual.js
+var Foo1 = class extends Component {
+	render() {}
+};
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? { foo1: PropTypes.string } : {};
+var Foo2 = class extends Component {
+	render() {}
+};
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? { foo2: PropTypes.string } : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-component' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/es-class-extend-component/actual.js
+var Foo1 = class extends Component {
+	render() {}
+};
+var Foo2 = class extends Component {
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-deopt' > should transform correctly in 'remove' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/es-class-extend-deopt/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-deopt' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/es-class-extend-deopt/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo.propTypes = { foo: PropTypes.string.isRequired } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-deopt' > should transform correctly in 'wrap' mode 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/es-class-extend-deopt/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+Foo.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string.isRequired } : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-deopt' > should transform correctly with fixture options 1`] = `
+"import BaseComponent from "components/base";
+
+//#region test/fixtures/es-class-extend-deopt/actual.js
+var Foo = class extends BaseComponent {
+	render() {}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-global-base-component' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/es-class-extend-global-base-component/actual.js
+var Foo1 = class extends GlobalComponent {
+	render() {}
+};
+var Foo2 = class extends GlobalComponent {
+	render() {}
+};
+Foo2.propTypes = { foo2: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-global-base-component' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/es-class-extend-global-base-component/actual.js
+var Foo1 = class extends GlobalComponent {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = { foo1: PropTypes.string } : void 0;
+var Foo2 = class extends GlobalComponent {
+	render() {}
+};
+Foo2.propTypes = { foo2: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-global-base-component' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/es-class-extend-global-base-component/actual.js
+var Foo1 = class extends GlobalComponent {
+	render() {}
+};
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? { foo1: PropTypes.string } : {};
+var Foo2 = class extends GlobalComponent {
+	render() {}
+};
+Foo2.propTypes = { foo2: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-extend-global-base-component' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/es-class-extend-global-base-component/actual.js
+var Foo1 = class extends GlobalComponent {
+	render() {}
+};
+var Foo2 = class extends GlobalComponent {
+	render() {}
+};
+Foo2.propTypes = { foo2: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'es-class-inheritance' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/es-class-inheritance/actual.js
+var PureRenderComponent = class extends Component {};
+var Foo1 = class extends PureRenderComponent {
+	render() {}
+};
+var Foo2 = class extends PureRenderComponent {
+	render() {}
+};
+Foo2.propTypes = { foo2: PropTypes.string.isRequired };
+var Foo3 = class {
+	render() {}
+};
+
+//#endregion
+export { Foo3 };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-inheritance' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/es-class-inheritance/actual.js
+var PureRenderComponent = class extends Component {};
+var Foo1 = class extends PureRenderComponent {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = { foo1: PropTypes.string.isRequired } : void 0;
+var Foo2 = class extends PureRenderComponent {
+	render() {}
+};
+Foo2.propTypes = { foo2: PropTypes.string.isRequired };
+var Foo3 = class {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo3.propTypes = { foo3: PropTypes.string } : void 0;
+
+//#endregion
+export { Foo3 };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-inheritance' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/es-class-inheritance/actual.js
+var PureRenderComponent = class extends Component {};
+var Foo1 = class extends PureRenderComponent {
+	render() {}
+};
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? { foo1: PropTypes.string.isRequired } : {};
+var Foo2 = class extends PureRenderComponent {
+	render() {}
+};
+Foo2.propTypes = { foo2: PropTypes.string.isRequired };
+var Foo3 = class {
+	render() {}
+};
+Foo3.propTypes = process.env.NODE_ENV !== "production" ? { foo3: PropTypes.string } : {};
+
+//#endregion
+export { Foo3 };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-inheritance' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/es-class-inheritance/actual.js
+var PureRenderComponent = class extends Component {};
+var Foo1 = class extends PureRenderComponent {
+	render() {}
+};
+var Foo2 = class extends PureRenderComponent {
+	render() {}
+};
+Foo2.propTypes = { foo2: PropTypes.string.isRequired };
+var Foo3 = class {
+	render() {}
+};
+
+//#endregion
+export { Foo3 };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-no-name' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/es-class-no-name/actual.js
+var actual_default = class extends React.Component {
+	render() {}
+};
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-no-name' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/es-class-no-name/actual.js
+var actual_default = class extends React.Component {
+	static propTypes = { foo: PropTypes.string };
+	render() {}
+};
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-no-name' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/es-class-no-name/actual.js
+var actual_default = class extends React.Component {
+	static propTypes = { foo: PropTypes.string };
+	render() {}
+};
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-no-name' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/es-class-no-name/actual.js
+var actual_default = class extends React.Component {
+	render() {}
+};
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-static-property' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/es-class-static-property/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+var Foo2 = class extends React.Component {
+	render() {}
+};
+
+//#endregion
+export { Foo2 as default };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-static-property' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/es-class-static-property/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = { bar1: PropTypes.string } : void 0;
+var Foo2 = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = { bar2: PropTypes.string } : void 0;
+
+//#endregion
+export { Foo2 as default };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-static-property' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/es-class-static-property/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? { bar1: PropTypes.string } : {};
+var Foo2 = class extends React.Component {
+	render() {}
+};
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? { bar2: PropTypes.string } : {};
+
+//#endregion
+export { Foo2 as default };"
+`;
+
+exports[`'rolldown' bundler > 'es-class-static-property' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/es-class-static-property/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+var Foo2 = class extends React.Component {
+	render() {}
+};
+
+//#endregion
+export { Foo2 as default };"
+`;
+
+exports[`'rolldown' bundler > 'ignore-filenames' > should transform correctly in 'remove' mode 1`] = `
+"import { SomeComponent } from "./SomeComponent";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/ignore-filenames/actual.js
+const propTypes = { value: SomeComponent.propTypes.value };
+function AnotherComponent(props) {
+	return /* @__PURE__ */ jsx(SomeComponent, { value: props.value });
+}
+
+//#endregion
+export { AnotherComponent };"
+`;
+
+exports[`'rolldown' bundler > 'ignore-filenames' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { SomeComponent } from "./SomeComponent";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/ignore-filenames/actual.js
+const propTypes = { value: SomeComponent.propTypes.value };
+function AnotherComponent(props) {
+	return /* @__PURE__ */ jsx(SomeComponent, { value: props.value });
+}
+process.env.NODE_ENV !== "production" ? AnotherComponent.propTypes = propTypes : void 0;
+
+//#endregion
+export { AnotherComponent };"
+`;
+
+exports[`'rolldown' bundler > 'ignore-filenames' > should transform correctly in 'wrap' mode 1`] = `
+"import { SomeComponent } from "./SomeComponent";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/ignore-filenames/actual.js
+const propTypes = { value: SomeComponent.propTypes.value };
+function AnotherComponent(props) {
+	return /* @__PURE__ */ jsx(SomeComponent, { value: props.value });
+}
+AnotherComponent.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+
+//#endregion
+export { AnotherComponent };"
+`;
+
+exports[`'rolldown' bundler > 'ignore-filenames' > should transform correctly with fixture options 1`] = `
+"import { SomeComponent } from "./SomeComponent";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/ignore-filenames/actual.js
+const propTypes = { value: SomeComponent.propTypes.value };
+function AnotherComponent(props) {
+	return /* @__PURE__ */ jsx(SomeComponent, { value: props.value });
+}
+AnotherComponent.propTypes = propTypes;
+
+//#endregion
+export { AnotherComponent };"
+`;
+
+exports[`'rolldown' bundler > 'issue-106' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from "prop-types";
+import React, { Component, createElement } from "react";
+
+//#region test/fixtures/issue-106/actual.js
+var RouteNode = class extends Component {
+	render() {
+		const { previousRoute, route } = this.state;
+		return createElement(RouteSegment, Object.assign({}, this.props, route, previousRoute));
+	}
+};
+const storeName = "storeName";
+RouteNode.wrappedComponent.propTypes = { [storeName]: PropTypes.object.isRequired };
+var BaseLink = class extends Component {
+	render() {
+		return React.createElement("a", {
+			href,
+			className,
+			onClick
+		}, this.props.children);
+	}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'issue-106' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import React, { Component, createElement } from "react";
+
+//#region test/fixtures/issue-106/actual.js
+var RouteNode = class extends Component {
+	render() {
+		const { previousRoute, route } = this.state;
+		return createElement(RouteSegment, Object.assign({}, this.props, route, previousRoute));
+	}
+};
+const storeName = "storeName";
+RouteNode.wrappedComponent.propTypes = { [storeName]: PropTypes.object.isRequired };
+var BaseLink = class extends Component {
+	render() {
+		return React.createElement("a", {
+			href,
+			className,
+			onClick
+		}, this.props.children);
+	}
+};
+process.env.NODE_ENV !== "production" ? BaseLink.propTypes = {
+	routeOptions: PropTypes.object,
+	[storeName]: PropTypes.object,
+	route: PropTypes.object,
+	["previousRoute"]: PropTypes.object
+} : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'issue-106' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import React, { Component, createElement } from "react";
+
+//#region test/fixtures/issue-106/actual.js
+var RouteNode = class extends Component {
+	render() {
+		const { previousRoute, route } = this.state;
+		return createElement(RouteSegment, Object.assign({}, this.props, route, previousRoute));
+	}
+};
+const storeName = "storeName";
+RouteNode.wrappedComponent.propTypes = { [storeName]: PropTypes.object.isRequired };
+var BaseLink = class extends Component {
+	render() {
+		return React.createElement("a", {
+			href,
+			className,
+			onClick
+		}, this.props.children);
+	}
+};
+BaseLink.propTypes = process.env.NODE_ENV !== "production" ? {
+	routeOptions: PropTypes.object,
+	[storeName]: PropTypes.object,
+	route: PropTypes.object,
+	["previousRoute"]: PropTypes.object
+} : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'issue-106' > should transform correctly with fixture options 1`] = `
+"import PropTypes from "prop-types";
+import React, { Component, createElement } from "react";
+
+//#region test/fixtures/issue-106/actual.js
+var RouteNode = class extends Component {
+	render() {
+		const { previousRoute, route } = this.state;
+		return createElement(RouteSegment, Object.assign({}, this.props, route, previousRoute));
+	}
+};
+const storeName = "storeName";
+RouteNode.wrappedComponent.propTypes = { [storeName]: PropTypes.object.isRequired };
+var BaseLink = class extends Component {
+	render() {
+		return React.createElement("a", {
+			href,
+			className,
+			onClick
+		}, this.props.children);
+	}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'not-react' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/not-react/actual.js
+var foo = { propTypes: { foo: "bar" } };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'not-react' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/not-react/actual.js
+var foo = { propTypes: { foo: "bar" } };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'not-react' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/not-react/actual.js
+var foo = { propTypes: { foo: "bar" } };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'not-react' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/not-react/actual.js
+var foo = { propTypes: { foo: "bar" } };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'not-react-assign-property' > should transform correctly in 'remove' mode 1`] = `
+"//#region test/fixtures/not-react-assign-property/actual.js
+var foo = {};
+foo.propTypes = { foo: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'not-react-assign-property' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region test/fixtures/not-react-assign-property/actual.js
+var foo = {};
+foo.propTypes = { foo: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'not-react-assign-property' > should transform correctly in 'wrap' mode 1`] = `
+"//#region test/fixtures/not-react-assign-property/actual.js
+var foo = {};
+foo.propTypes = { foo: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'not-react-assign-property' > should transform correctly with fixture options 1`] = `
+"//#region test/fixtures/not-react-assign-property/actual.js
+var foo = {};
+foo.propTypes = { foo: PropTypes.string };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class' > should transform correctly in 'remove' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class/actual.js
+var createReactClass = __require("create-react-class");
+var PropTypes = __require("prop-types");
+createReactClass({ propTypes: { foo: PropTypes.string } });
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class/actual.js
+var createReactClass = __require("create-react-class");
+var PropTypes = __require("prop-types");
+createReactClass({ propTypes: { foo: PropTypes.string } });
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class' > should transform correctly in 'wrap' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class/actual.js
+var createReactClass = __require("create-react-class");
+var PropTypes = __require("prop-types");
+createReactClass({ propTypes: { foo: PropTypes.string } });
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class' > should transform correctly with fixture options 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class/actual.js
+var createReactClass = __require("create-react-class");
+var PropTypes = __require("prop-types");
+createReactClass({ propTypes: { foo: PropTypes.string } });
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class-custom-name' > should transform correctly in 'remove' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class-custom-name/actual.js
+var createSomethingReallySpecial = __require("create-react-class");
+var PropTypes = __require("prop-types");
+createSomethingReallySpecial({ propTypes: { foo: PropTypes.string } });
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class-custom-name' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class-custom-name/actual.js
+var createSomethingReallySpecial = __require("create-react-class");
+var PropTypes = __require("prop-types");
+createSomethingReallySpecial({ propTypes: { foo: PropTypes.string } });
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class-custom-name' > should transform correctly in 'wrap' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class-custom-name/actual.js
+var createSomethingReallySpecial = __require("create-react-class");
+var PropTypes = __require("prop-types");
+createSomethingReallySpecial({ propTypes: { foo: PropTypes.string } });
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class-custom-name' > should transform correctly with fixture options 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class-custom-name/actual.js
+var createSomethingReallySpecial = __require("create-react-class");
+var PropTypes = __require("prop-types");
+createSomethingReallySpecial({ propTypes: { foo: PropTypes.string } });
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class-custom-name-no-pro…' > should transform correctly in 'remove' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class-custom-name-no-property-name/actual.js
+var { createClass } = __require("./notReact");
+var PropTypes = __require("prop-types");
+var Class1 = createClass({
+	displayName: "Class1",
+	propTypes: { foo: PropTypes.string }
+});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class-custom-name-no-pro…' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class-custom-name-no-property-name/actual.js
+var { createClass } = __require("./notReact");
+var PropTypes = __require("prop-types");
+var Class1 = createClass({
+	displayName: "Class1",
+	propTypes: { foo: PropTypes.string }
+});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class-custom-name-no-pro…' > should transform correctly in 'wrap' mode 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class-custom-name-no-property-name/actual.js
+var { createClass } = __require("./notReact");
+var PropTypes = __require("prop-types");
+var Class1 = createClass({
+	displayName: "Class1",
+	propTypes: { foo: PropTypes.string }
+});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'react-create-class-custom-name-no-pro…' > should transform correctly with fixture options 1`] = `
+"//#region rolldown:runtime
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, { get: (a, b) => (typeof require !== "undefined" ? require : a)[b] }) : x)(function(x) {
+	if (typeof require !== "undefined") return require.apply(this, arguments);
+	throw Error("Calling \`require\` for \\"" + x + "\\" in an environment that doesn't expose the \`require\` function.");
+});
+
+//#endregion
+//#region test/fixtures/react-create-class-custom-name-no-property-name/actual.js
+var { createClass } = __require("./notReact");
+var PropTypes = __require("prop-types");
+var Class1 = createClass({
+	displayName: "Class1",
+	propTypes: { foo: PropTypes.string }
+});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'recursive' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from "prop-types";
+import { cloneElement } from "react";
+
+//#region test/fixtures/recursive/actual.js
+function Composer(props) {
+	return renderRecursive(props.children, props.components);
+}
+Composer.propTypes = {
+	children: PropTypes.func.isRequired,
+	components: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.element, PropTypes.func])).isRequired
+};
+function renderRecursive(render, remaining, results) {
+	results = results || [];
+	if (!remaining[0]) {
+		return render(results);
+	}
+	function nextRender(value) {
+		return renderRecursive(render, remaining.slice(1), results.concat([value]));
+	}
+	return typeof remaining[0] === "function" ? remaining[0]({
+		results,
+		render: nextRender
+	}) : cloneElement(remaining[0], { children: nextRender });
+}
+
+//#endregion
+export { Composer as default };"
+`;
+
+exports[`'rolldown' bundler > 'recursive' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { cloneElement } from "react";
+
+//#region test/fixtures/recursive/actual.js
+function Composer(props) {
+	return renderRecursive(props.children, props.components);
+}
+Composer.propTypes = {
+	children: PropTypes.func.isRequired,
+	components: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.element, PropTypes.func])).isRequired
+};
+function renderRecursive(render, remaining, results) {
+	results = results || [];
+	if (!remaining[0]) {
+		return render(results);
+	}
+	function nextRender(value) {
+		return renderRecursive(render, remaining.slice(1), results.concat([value]));
+	}
+	return typeof remaining[0] === "function" ? remaining[0]({
+		results,
+		render: nextRender
+	}) : cloneElement(remaining[0], { children: nextRender });
+}
+
+//#endregion
+export { Composer as default };"
+`;
+
+exports[`'rolldown' bundler > 'recursive' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { cloneElement } from "react";
+
+//#region test/fixtures/recursive/actual.js
+function Composer(props) {
+	return renderRecursive(props.children, props.components);
+}
+Composer.propTypes = {
+	children: PropTypes.func.isRequired,
+	components: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.element, PropTypes.func])).isRequired
+};
+function renderRecursive(render, remaining, results) {
+	results = results || [];
+	if (!remaining[0]) {
+		return render(results);
+	}
+	function nextRender(value) {
+		return renderRecursive(render, remaining.slice(1), results.concat([value]));
+	}
+	return typeof remaining[0] === "function" ? remaining[0]({
+		results,
+		render: nextRender
+	}) : cloneElement(remaining[0], { children: nextRender });
+}
+
+//#endregion
+export { Composer as default };"
+`;
+
+exports[`'rolldown' bundler > 'recursive' > should transform correctly with fixture options 1`] = `
+"import PropTypes from "prop-types";
+import { cloneElement } from "react";
+
+//#region test/fixtures/recursive/actual.js
+function Composer(props) {
+	return renderRecursive(props.children, props.components);
+}
+Composer.propTypes = {
+	children: PropTypes.func.isRequired,
+	components: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.element, PropTypes.func])).isRequired
+};
+function renderRecursive(render, remaining, results) {
+	results = results || [];
+	if (!remaining[0]) {
+		return render(results);
+	}
+	function nextRender(value) {
+		return renderRecursive(render, remaining.slice(1), results.concat([value]));
+	}
+	return typeof remaining[0] === "function" ? remaining[0]({
+		results,
+		render: nextRender
+	}) : cloneElement(remaining[0], { children: nextRender });
+}
+
+//#endregion
+export { Composer as default };"
+`;
+
+exports[`'rolldown' bundler > 'remove-import-proptypes' > should transform correctly in 'remove' mode 1`] = `
+"import "prop-types";
+import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/remove-import-proptypes/actual.js
+var Greeting = class extends Component {
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: ["Hello, ", this.props.name] });
+	}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'remove-import-proptypes' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/remove-import-proptypes/actual.js
+var Greeting = class extends Component {
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: ["Hello, ", this.props.name] });
+	}
+};
+process.env.NODE_ENV !== "production" ? Greeting.propTypes = { name: PropTypes.string } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'remove-import-proptypes' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/remove-import-proptypes/actual.js
+var Greeting = class extends Component {
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: ["Hello, ", this.props.name] });
+	}
+};
+Greeting.propTypes = process.env.NODE_ENV !== "production" ? { name: PropTypes.string } : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'remove-import-proptypes' > should transform correctly with fixture options 1`] = `
+"import { Component } from "react";
+import { jsxs } from "react/jsx-runtime";
+
+//#region test/fixtures/remove-import-proptypes/actual.js
+var Greeting = class extends Component {
+	render() {
+		return /* @__PURE__ */ jsxs("h1", { children: ["Hello, ", this.props.name] });
+	}
+};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'shared-prop-type-variable' > should transform correctly in 'remove' mode 1`] = `
+"import React from "react";
+import { omit } from "underscore";
+import Bar from "./bar";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/shared-prop-type-variable/actual.js
+const { PropTypes } = React;
+const propTypes = { foo: PropTypes.any };
+function Foo(props) {
+	const barProps = omit(props, Object.keys(propTypes));
+	return /* @__PURE__ */ jsx(Bar, { ...barProps });
+}
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'shared-prop-type-variable' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import React from "react";
+import { omit } from "underscore";
+import Bar from "./bar";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/shared-prop-type-variable/actual.js
+const { PropTypes } = React;
+const propTypes = { foo: PropTypes.any };
+function Foo(props) {
+	const barProps = omit(props, Object.keys(propTypes));
+	return /* @__PURE__ */ jsx(Bar, { ...barProps });
+}
+process.env.NODE_ENV !== "production" ? Foo.propTypes = propTypes : void 0;
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'shared-prop-type-variable' > should transform correctly in 'wrap' mode 1`] = `
+"import React from "react";
+import { omit } from "underscore";
+import Bar from "./bar";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/shared-prop-type-variable/actual.js
+const { PropTypes } = React;
+const propTypes = { foo: PropTypes.any };
+function Foo(props) {
+	const barProps = omit(props, Object.keys(propTypes));
+	return /* @__PURE__ */ jsx(Bar, { ...barProps });
+}
+Foo.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'shared-prop-type-variable' > should transform correctly with fixture options 1`] = `
+"import React from "react";
+import { omit } from "underscore";
+import Bar from "./bar";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/shared-prop-type-variable/actual.js
+const { PropTypes } = React;
+const propTypes = { foo: PropTypes.any };
+function Foo(props) {
+	const barProps = omit(props, Object.keys(propTypes));
+	return /* @__PURE__ */ jsx(Bar, { ...barProps });
+}
+
+//#endregion
+export { Foo as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-arrow-return-function' > should transform correctly in 'remove' mode 1`] = `
+"import map from "lodash/map";
+import "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-arrow-return-function/actual.js
+var Message = ({ mapList }) => {
+	return map(mapList, (index) => {
+		return /* @__PURE__ */ jsx("div", {});
+	});
+};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-arrow-return-function' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import map from "lodash/map";
+import { PropTypes } from "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-arrow-return-function/actual.js
+var Message = ({ mapList }) => {
+	return map(mapList, (index) => {
+		return /* @__PURE__ */ jsx("div", {});
+	});
+};
+process.env.NODE_ENV !== "production" ? Message.propTypes = { mapList: PropTypes.array.isRequired } : void 0;
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-arrow-return-function' > should transform correctly in 'wrap' mode 1`] = `
+"import map from "lodash/map";
+import { PropTypes } from "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-arrow-return-function/actual.js
+var Message = ({ mapList }) => {
+	return map(mapList, (index) => {
+		return /* @__PURE__ */ jsx("div", {});
+	});
+};
+Message.propTypes = process.env.NODE_ENV !== "production" ? { mapList: PropTypes.array.isRequired } : {};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-arrow-return-function' > should transform correctly with fixture options 1`] = `
+"import map from "lodash/map";
+import "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-arrow-return-function/actual.js
+var Message = ({ mapList }) => {
+	return map(mapList, (index) => {
+		return /* @__PURE__ */ jsx("div", {});
+	});
+};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-force-removal' > should transform correctly in 'remove' mode 1`] = `
+"import "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-force-removal/actual.js
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+	if (messageTxt === null) {
+		return;
+	}
+	return /* @__PURE__ */ jsx("div", {
+		className: "alert alert-" + messageType,
+		role: "alert",
+		children: messageTxt
+	});
+};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-force-removal' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { PropTypes } from "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-force-removal/actual.js
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+	if (messageTxt === null) {
+		return;
+	}
+	return /* @__PURE__ */ jsx("div", {
+		className: "alert alert-" + messageType,
+		role: "alert",
+		children: messageTxt
+	});
+};
+process.env.NODE_ENV !== "production" ? Message.propTypes = {
+	isFetching: PropTypes.bool.isRequired,
+	isSuccess: PropTypes.bool.isRequired,
+	isFailure: PropTypes.bool.isRequired,
+	errorMsg: PropTypes.string.isRequired
+} : void 0;
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-force-removal' > should transform correctly in 'wrap' mode 1`] = `
+"import { PropTypes } from "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-force-removal/actual.js
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+	if (messageTxt === null) {
+		return;
+	}
+	return /* @__PURE__ */ jsx("div", {
+		className: "alert alert-" + messageType,
+		role: "alert",
+		children: messageTxt
+	});
+};
+Message.propTypes = process.env.NODE_ENV !== "production" ? {
+	isFetching: PropTypes.bool.isRequired,
+	isSuccess: PropTypes.bool.isRequired,
+	isFailure: PropTypes.bool.isRequired,
+	errorMsg: PropTypes.string.isRequired
+} : {};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-force-removal' > should transform correctly with fixture options 1`] = `
+"import "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-force-removal/actual.js
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+	if (messageTxt === null) {
+		return;
+	}
+	return /* @__PURE__ */ jsx("div", {
+		className: "alert alert-" + messageType,
+		role: "alert",
+		children: messageTxt
+	});
+};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-functional-components' > should transform correctly in 'remove' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-functional-components/actual.js
+const Foo1 = () => /* @__PURE__ */ jsx("div", {});
+const Foo2 = () => {
+	return /* @__PURE__ */ jsx("div", {});
+};
+const Foo3 = function() {
+	switch (true) {
+		case true:
+			if (true) {
+				return /* @__PURE__ */ jsx("div", {});
+			} else {
+				return /* @__PURE__ */ jsx("span", {});
+			}
+			break;
+	}
+};
+function Foo4() {
+	return /* @__PURE__ */ jsx("div", {});
+}
+function Foo5() {
+	const bar5 = function() {
+		return /* @__PURE__ */ jsx("div", {});
+	};
+	return bar5();
+}
+function Foo6() {
+	var result = bar6();
+	return result;
+	function bar6() {
+		return /* @__PURE__ */ jsx("div", {});
+	}
+}
+function Foo7() {
+	const shallow = { shallowMember() {
+		return /* @__PURE__ */ jsx("div", {});
+	} };
+	return shallow.shallowMember();
+}
+function Foo8() {
+	const obj = { deep: { member() {
+		return /* @__PURE__ */ jsx("div", {});
+	} } };
+	return obj.deep.member();
+}
+const Foo9 = () => React.createElement("div", null);
+const Foo10 = () => {
+	return React.createElement("div", null);
+};
+const Foo11 = () => true && /* @__PURE__ */ jsx("div", {});
+function Foo12(props) {
+	return React.cloneElement(props.children);
+}
+const Foo13 = React.memo(() => true && /* @__PURE__ */ jsx("div", {}));
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'stateless-functional-components' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-functional-components/actual.js
+const Foo1 = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = { foo: PropTypes.string } : void 0;
+const Foo2 = () => {
+	return /* @__PURE__ */ jsx("div", {});
+};
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = { foo: PropTypes.string } : void 0;
+const Foo3 = function() {
+	switch (true) {
+		case true:
+			if (true) {
+				return /* @__PURE__ */ jsx("div", {});
+			} else {
+				return /* @__PURE__ */ jsx("span", {});
+			}
+			break;
+	}
+};
+process.env.NODE_ENV !== "production" ? Foo3.propTypes = { foo: PropTypes.string } : void 0;
+function Foo4() {
+	return /* @__PURE__ */ jsx("div", {});
+}
+process.env.NODE_ENV !== "production" ? Foo4.propTypes = { foo: PropTypes.string } : void 0;
+function Foo5() {
+	const bar5 = function() {
+		return /* @__PURE__ */ jsx("div", {});
+	};
+	return bar5();
+}
+process.env.NODE_ENV !== "production" ? Foo5.propTypes = { foo: PropTypes.string } : void 0;
+function Foo6() {
+	var result = bar6();
+	return result;
+	function bar6() {
+		return /* @__PURE__ */ jsx("div", {});
+	}
+}
+process.env.NODE_ENV !== "production" ? Foo6.propTypes = { foo: PropTypes.string } : void 0;
+function Foo7() {
+	const shallow = { shallowMember() {
+		return /* @__PURE__ */ jsx("div", {});
+	} };
+	return shallow.shallowMember();
+}
+process.env.NODE_ENV !== "production" ? Foo7.propTypes = { foo: PropTypes.string } : void 0;
+function Foo8() {
+	const obj = { deep: { member() {
+		return /* @__PURE__ */ jsx("div", {});
+	} } };
+	return obj.deep.member();
+}
+process.env.NODE_ENV !== "production" ? Foo8.propTypes = { foo: PropTypes.string } : void 0;
+const Foo9 = () => React.createElement("div", null);
+process.env.NODE_ENV !== "production" ? Foo9.propTypes = { foo: PropTypes.string } : void 0;
+const Foo10 = () => {
+	return React.createElement("div", null);
+};
+process.env.NODE_ENV !== "production" ? Foo10.propTypes = { foo: PropTypes.string } : void 0;
+const Foo11 = () => true && /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? Foo11.propTypes = { foo: PropTypes.string } : void 0;
+function Foo12(props) {
+	return React.cloneElement(props.children);
+}
+process.env.NODE_ENV !== "production" ? Foo12.propTypes = { foo: PropTypes.string } : void 0;
+const Foo13 = React.memo(() => true && /* @__PURE__ */ jsx("div", {}));
+process.env.NODE_ENV !== "production" ? Foo13.propTypes = { foo: PropTypes.string } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'stateless-functional-components' > should transform correctly in 'wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-functional-components/actual.js
+const Foo1 = () => /* @__PURE__ */ jsx("div", {});
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+const Foo2 = () => {
+	return /* @__PURE__ */ jsx("div", {});
+};
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+const Foo3 = function() {
+	switch (true) {
+		case true:
+			if (true) {
+				return /* @__PURE__ */ jsx("div", {});
+			} else {
+				return /* @__PURE__ */ jsx("span", {});
+			}
+			break;
+	}
+};
+Foo3.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+function Foo4() {
+	return /* @__PURE__ */ jsx("div", {});
+}
+Foo4.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+function Foo5() {
+	const bar5 = function() {
+		return /* @__PURE__ */ jsx("div", {});
+	};
+	return bar5();
+}
+Foo5.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+function Foo6() {
+	var result = bar6();
+	return result;
+	function bar6() {
+		return /* @__PURE__ */ jsx("div", {});
+	}
+}
+Foo6.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+function Foo7() {
+	const shallow = { shallowMember() {
+		return /* @__PURE__ */ jsx("div", {});
+	} };
+	return shallow.shallowMember();
+}
+Foo7.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+function Foo8() {
+	const obj = { deep: { member() {
+		return /* @__PURE__ */ jsx("div", {});
+	} } };
+	return obj.deep.member();
+}
+Foo8.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+const Foo9 = () => React.createElement("div", null);
+Foo9.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+const Foo10 = () => {
+	return React.createElement("div", null);
+};
+Foo10.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+const Foo11 = () => true && /* @__PURE__ */ jsx("div", {});
+Foo11.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+function Foo12(props) {
+	return React.cloneElement(props.children);
+}
+Foo12.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+const Foo13 = React.memo(() => true && /* @__PURE__ */ jsx("div", {}));
+Foo13.propTypes = process.env.NODE_ENV !== "production" ? { foo: PropTypes.string } : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'stateless-functional-components' > should transform correctly with fixture options 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-functional-components/actual.js
+const Foo1 = () => /* @__PURE__ */ jsx("div", {});
+const Foo2 = () => {
+	return /* @__PURE__ */ jsx("div", {});
+};
+const Foo3 = function() {
+	switch (true) {
+		case true:
+			if (true) {
+				return /* @__PURE__ */ jsx("div", {});
+			} else {
+				return /* @__PURE__ */ jsx("span", {});
+			}
+			break;
+	}
+};
+function Foo4() {
+	return /* @__PURE__ */ jsx("div", {});
+}
+function Foo5() {
+	const bar5 = function() {
+		return /* @__PURE__ */ jsx("div", {});
+	};
+	return bar5();
+}
+function Foo6() {
+	var result = bar6();
+	return result;
+	function bar6() {
+		return /* @__PURE__ */ jsx("div", {});
+	}
+}
+function Foo7() {
+	const shallow = { shallowMember() {
+		return /* @__PURE__ */ jsx("div", {});
+	} };
+	return shallow.shallowMember();
+}
+function Foo8() {
+	const obj = { deep: { member() {
+		return /* @__PURE__ */ jsx("div", {});
+	} } };
+	return obj.deep.member();
+}
+const Foo9 = () => React.createElement("div", null);
+const Foo10 = () => {
+	return React.createElement("div", null);
+};
+const Foo11 = () => true && /* @__PURE__ */ jsx("div", {});
+function Foo12(props) {
+	return React.cloneElement(props.children);
+}
+const Foo13 = React.memo(() => true && /* @__PURE__ */ jsx("div", {}));
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'stateless-return-undefined' > should transform correctly in 'remove' mode 1`] = `
+"import "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-return-undefined/actual.js
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+	if (messageTxt === null) {
+		return;
+	}
+	return /* @__PURE__ */ jsx("div", {
+		className: "alert alert-" + messageType,
+		role: "alert",
+		children: messageTxt
+	});
+};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-return-undefined' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { PropTypes } from "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-return-undefined/actual.js
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+	if (messageTxt === null) {
+		return;
+	}
+	return /* @__PURE__ */ jsx("div", {
+		className: "alert alert-" + messageType,
+		role: "alert",
+		children: messageTxt
+	});
+};
+process.env.NODE_ENV !== "production" ? Message.propTypes = {
+	isFetching: PropTypes.bool.isRequired,
+	isSuccess: PropTypes.bool.isRequired,
+	isFailure: PropTypes.bool.isRequired,
+	errorMsg: PropTypes.string.isRequired
+} : void 0;
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-return-undefined' > should transform correctly in 'wrap' mode 1`] = `
+"import { PropTypes } from "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-return-undefined/actual.js
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+	if (messageTxt === null) {
+		return;
+	}
+	return /* @__PURE__ */ jsx("div", {
+		className: "alert alert-" + messageType,
+		role: "alert",
+		children: messageTxt
+	});
+};
+Message.propTypes = process.env.NODE_ENV !== "production" ? {
+	isFetching: PropTypes.bool.isRequired,
+	isSuccess: PropTypes.bool.isRequired,
+	isFailure: PropTypes.bool.isRequired,
+	errorMsg: PropTypes.string.isRequired
+} : {};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'stateless-return-undefined' > should transform correctly with fixture options 1`] = `
+"import "react";
+import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/stateless-return-undefined/actual.js
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+	if (messageTxt === null) {
+		return;
+	}
+	return /* @__PURE__ */ jsx("div", {
+		className: "alert alert-" + messageType,
+		role: "alert",
+		children: messageTxt
+	});
+};
+var actual_default = Message;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'unsafe-wrap' > should transform correctly in 'remove' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/unsafe-wrap/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+var Foo2 = class extends React.Component {
+	render() {}
+};
+const Foo3 = () => /* @__PURE__ */ jsx("div", {});
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'unsafe-wrap' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/unsafe-wrap/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = { bar1: PropTypes.string } : void 0;
+var Foo2 = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = { bar2: PropTypes.string } : void 0;
+const Foo3 = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? Foo3.propTypes = { bar3: PropTypes.string } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'unsafe-wrap' > should transform correctly in 'wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/unsafe-wrap/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? { bar1: PropTypes.string } : {};
+var Foo2 = class extends React.Component {
+	render() {}
+};
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? { bar2: PropTypes.string } : {};
+const Foo3 = () => /* @__PURE__ */ jsx("div", {});
+Foo3.propTypes = process.env.NODE_ENV !== "production" ? { bar3: PropTypes.string } : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'unsafe-wrap' > should transform correctly with fixture options 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/unsafe-wrap/actual.js
+var Foo1 = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = { bar1: PropTypes.string } : void 0;
+var Foo2 = class extends React.Component {
+	render() {}
+};
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = { bar2: PropTypes.string } : void 0;
+const Foo3 = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? Foo3.propTypes = { bar3: PropTypes.string } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'variable-assignment' > should transform correctly in 'remove' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/variable-assignment/actual.js
+const propTypesBasic = { foo: PropTypes.string };
+const FooBasic = () => /* @__PURE__ */ jsx("div", {});
+const extraReference = { bar: PropTypes.string };
+const propTypesWithExtraReference = Object.assign({}, extraReference, { foo: PropTypes.string });
+const FooExtraReference = () => /* @__PURE__ */ jsx("div", {});
+const propTypesWithExtraReferenceSpread = {
+	...extraReference,
+	...{ foo: PropTypes.string },
+	bar: PropTypes.string
+};
+const FooExtraReferenceSpread = () => /* @__PURE__ */ jsx("div", {});
+const propTypesWrapped = { foo: PropTypes.string };
+const FooWrapped = () => /* @__PURE__ */ jsx("div", {});
+const propTypesReferenced = { foo: PropTypes.string };
+const FooReferenced = () => /* @__PURE__ */ jsx("div", { bar: propTypesReferenced });
+const propTypesExported = { foo: PropTypes.string };
+const FooExported = () => /* @__PURE__ */ jsx("div", {});
+const propTypesCreateClass = { foo: PropTypes.string };
+const FooCreateClass = createReactClass({
+	displayName: "FooCreateClass",
+	propTypes: propTypesCreateClass
+});
+
+//#endregion
+export { propTypesExported };"
+`;
+
+exports[`'rolldown' bundler > 'variable-assignment' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/variable-assignment/actual.js
+const propTypesBasic = { foo: PropTypes.string };
+const FooBasic = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? FooBasic.propTypes = propTypesBasic : void 0;
+const extraReference = { bar: PropTypes.string };
+const propTypesWithExtraReference = Object.assign({}, extraReference, { foo: PropTypes.string });
+const FooExtraReference = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? FooExtraReference.propTypes = propTypesWithExtraReference : void 0;
+const propTypesWithExtraReferenceSpread = {
+	...extraReference,
+	...{ foo: PropTypes.string },
+	bar: PropTypes.string
+};
+const FooExtraReferenceSpread = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? FooExtraReferenceSpread.propTypes = propTypesWithExtraReferenceSpread : void 0;
+const propTypesWrapped = { foo: PropTypes.string };
+const FooWrapped = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? FooWrapped.propTypes = someWrappingFunction(propTypesWrapped) : void 0;
+const propTypesReferenced = { foo: PropTypes.string };
+const FooReferenced = () => /* @__PURE__ */ jsx("div", { bar: propTypesReferenced });
+process.env.NODE_ENV !== "production" ? FooReferenced.propTypes = propTypesReferenced : void 0;
+const propTypesExported = { foo: PropTypes.string };
+const FooExported = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? FooExported.propTypes = propTypesExported : void 0;
+const propTypesCreateClass = { foo: PropTypes.string };
+const FooCreateClass = createReactClass({
+	displayName: "FooCreateClass",
+	propTypes: propTypesCreateClass
+});
+
+//#endregion
+export { propTypesExported };"
+`;
+
+exports[`'rolldown' bundler > 'variable-assignment' > should transform correctly in 'wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/variable-assignment/actual.js
+const propTypesBasic = { foo: PropTypes.string };
+const FooBasic = () => /* @__PURE__ */ jsx("div", {});
+FooBasic.propTypes = process.env.NODE_ENV !== "production" ? propTypesBasic : {};
+const extraReference = { bar: PropTypes.string };
+const propTypesWithExtraReference = Object.assign({}, extraReference, { foo: PropTypes.string });
+const FooExtraReference = () => /* @__PURE__ */ jsx("div", {});
+FooExtraReference.propTypes = process.env.NODE_ENV !== "production" ? propTypesWithExtraReference : {};
+const propTypesWithExtraReferenceSpread = {
+	...extraReference,
+	...{ foo: PropTypes.string },
+	bar: PropTypes.string
+};
+const FooExtraReferenceSpread = () => /* @__PURE__ */ jsx("div", {});
+FooExtraReferenceSpread.propTypes = process.env.NODE_ENV !== "production" ? propTypesWithExtraReferenceSpread : {};
+const propTypesWrapped = { foo: PropTypes.string };
+const FooWrapped = () => /* @__PURE__ */ jsx("div", {});
+FooWrapped.propTypes = process.env.NODE_ENV !== "production" ? someWrappingFunction(propTypesWrapped) : {};
+const propTypesReferenced = { foo: PropTypes.string };
+const FooReferenced = () => /* @__PURE__ */ jsx("div", { bar: propTypesReferenced });
+FooReferenced.propTypes = process.env.NODE_ENV !== "production" ? propTypesReferenced : {};
+const propTypesExported = { foo: PropTypes.string };
+const FooExported = () => /* @__PURE__ */ jsx("div", {});
+FooExported.propTypes = process.env.NODE_ENV !== "production" ? propTypesExported : {};
+const propTypesCreateClass = { foo: PropTypes.string };
+const FooCreateClass = createReactClass({
+	displayName: "FooCreateClass",
+	propTypes: propTypesCreateClass
+});
+
+//#endregion
+export { propTypesExported };"
+`;
+
+exports[`'rolldown' bundler > 'variable-assignment' > should transform correctly with fixture options 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/variable-assignment/actual.js
+const propTypesBasic = { foo: PropTypes.string };
+const FooBasic = () => /* @__PURE__ */ jsx("div", {});
+const extraReference = { bar: PropTypes.string };
+const propTypesWithExtraReference = Object.assign({}, extraReference, { foo: PropTypes.string });
+const FooExtraReference = () => /* @__PURE__ */ jsx("div", {});
+const propTypesWithExtraReferenceSpread = {
+	...extraReference,
+	...{ foo: PropTypes.string },
+	bar: PropTypes.string
+};
+const FooExtraReferenceSpread = () => /* @__PURE__ */ jsx("div", {});
+const propTypesWrapped = { foo: PropTypes.string };
+const FooWrapped = () => /* @__PURE__ */ jsx("div", {});
+const propTypesReferenced = { foo: PropTypes.string };
+const FooReferenced = () => /* @__PURE__ */ jsx("div", { bar: propTypesReferenced });
+const propTypesExported = { foo: PropTypes.string };
+const FooExported = () => /* @__PURE__ */ jsx("div", {});
+const propTypesCreateClass = { foo: PropTypes.string };
+const FooCreateClass = createReactClass({
+	displayName: "FooCreateClass",
+	propTypes: propTypesCreateClass
+});
+
+//#endregion
+export { propTypesExported };"
+`;
+
+exports[`'rolldown' bundler > 'variable-assignment-member-expressions' > should transform correctly in 'remove' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/variable-assignment-member-expressions/actual.js
+const shapePropType = PropTypes.shape({ foo: PropTypes.string });
+const ComponentA = () => /* @__PURE__ */ jsx("div", {});
+const somePropTypes = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentB = () => /* @__PURE__ */ jsx("div", {});
+const somePropTypesC = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentC = () => /* @__PURE__ */ jsx("div", {});
+const somePropTypesD = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentD = () => /* @__PURE__ */ jsx("div", {});
+const foo = { bar: "foo" };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'variable-assignment-member-expressions' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/variable-assignment-member-expressions/actual.js
+const shapePropType = PropTypes.shape({ foo: PropTypes.string });
+const ComponentA = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? ComponentA.propTypes = { foo: shapePropType.isRequired } : void 0;
+const somePropTypes = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentB = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? ComponentB.propTypes = { foo: somePropTypes.foo.isRequired } : void 0;
+const somePropTypesC = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentC = () => /* @__PURE__ */ jsx("div", {});
+process.env.NODE_ENV !== "production" ? ComponentC.propTypes = { foo: somePropTypesC["foo"].isRequired } : void 0;
+const somePropTypesD = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentD = () => /* @__PURE__ */ jsx("div", {});
+const foo = { bar: "foo" };
+process.env.NODE_ENV !== "production" ? ComponentD.propTypes = { [foo.bar]: somePropTypesD["foo"].isRequired } : void 0;
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'variable-assignment-member-expressions' > should transform correctly in 'wrap' mode 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/variable-assignment-member-expressions/actual.js
+const shapePropType = PropTypes.shape({ foo: PropTypes.string });
+const ComponentA = () => /* @__PURE__ */ jsx("div", {});
+ComponentA.propTypes = process.env.NODE_ENV !== "production" ? { foo: shapePropType.isRequired } : {};
+const somePropTypes = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentB = () => /* @__PURE__ */ jsx("div", {});
+ComponentB.propTypes = process.env.NODE_ENV !== "production" ? { foo: somePropTypes.foo.isRequired } : {};
+const somePropTypesC = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentC = () => /* @__PURE__ */ jsx("div", {});
+ComponentC.propTypes = process.env.NODE_ENV !== "production" ? { foo: somePropTypesC["foo"].isRequired } : {};
+const somePropTypesD = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentD = () => /* @__PURE__ */ jsx("div", {});
+const foo = { bar: "foo" };
+ComponentD.propTypes = process.env.NODE_ENV !== "production" ? { [foo.bar]: somePropTypesD["foo"].isRequired } : {};
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'variable-assignment-member-expressions' > should transform correctly with fixture options 1`] = `
+"import { jsx } from "react/jsx-runtime";
+
+//#region test/fixtures/variable-assignment-member-expressions/actual.js
+const shapePropType = PropTypes.shape({ foo: PropTypes.string });
+const ComponentA = () => /* @__PURE__ */ jsx("div", {});
+const somePropTypes = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentB = () => /* @__PURE__ */ jsx("div", {});
+const somePropTypesC = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentC = () => /* @__PURE__ */ jsx("div", {});
+const somePropTypesD = {
+	foo: PropTypes.string,
+	bar: PropTypes.number
+};
+const ComponentD = () => /* @__PURE__ */ jsx("div", {});
+const foo = { bar: "foo" };
+
+//#endregion"
+`;
+
+exports[`'rolldown' bundler > 'variable-comment-annotation' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from "prop-types";
+import "react";
+import { connect } from "react-redux";
+import FooComponent from "./FooComponent";
+
+//#region test/fixtures/variable-comment-annotation/actual.js
+const Foo = connect(() => {}, () => {})(FooComponent);
+Foo.propTypes = { bar: PropTypes.string.isRequired };
+var actual_default = Foo;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'variable-comment-annotation' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import "react";
+import { connect } from "react-redux";
+import FooComponent from "./FooComponent";
+
+//#region test/fixtures/variable-comment-annotation/actual.js
+const Foo = connect(() => {}, () => {})(FooComponent);
+Foo.propTypes = { bar: PropTypes.string.isRequired };
+var actual_default = Foo;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'variable-comment-annotation' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from "prop-types";
+import "react";
+import { connect } from "react-redux";
+import FooComponent from "./FooComponent";
+
+//#region test/fixtures/variable-comment-annotation/actual.js
+const Foo = connect(() => {}, () => {})(FooComponent);
+Foo.propTypes = { bar: PropTypes.string.isRequired };
+var actual_default = Foo;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rolldown' bundler > 'variable-comment-annotation' > should transform correctly with fixture options 1`] = `
+"import PropTypes from "prop-types";
+import "react";
+import { connect } from "react-redux";
+import FooComponent from "./FooComponent";
+
+//#region test/fixtures/variable-comment-annotation/actual.js
+const Foo = connect(() => {}, () => {})(FooComponent);
+Foo.propTypes = { bar: PropTypes.string.isRequired };
+var actual_default = Foo;
+
+//#endregion
+export { actual_default as default };"
+`;
+
+exports[`'rollup' bundler > 'additional-libraries' > should transform correctly in 'remove' mode 1`] = `
+"import 'prop-types';
+import { Component } from 'react';
+import 'react-immutable-proptypes';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} and {this.props.friends.join(", ")} to{" "}
+				{this.state.appName}
+			</h1>
+		);
+	}
+}
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'additional-libraries' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} and {this.props.friends.join(", ")} to{" "}
+				{this.state.appName}
+			</h1>
+		);
+	}
+}
+
+process.env.NODE_ENV !== "production" ? Greeting.propTypes = {
+	name: PropTypes.string.isRequired,
+	friends: ImmutablePropTypes.list.isRequired,
+} : void 0;
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'additional-libraries' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} and {this.props.friends.join(", ")} to{" "}
+				{this.state.appName}
+			</h1>
+		);
+	}
+}
+
+Greeting.propTypes = process.env.NODE_ENV !== "production" ? {
+	name: PropTypes.string.isRequired,
+	friends: ImmutablePropTypes.list.isRequired,
+} : {};
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'additional-libraries' > should transform correctly with fixture options 1`] = `
+"import { Component } from 'react';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} and {this.props.friends.join(", ")} to{" "}
+				{this.state.appName}
+			</h1>
+		);
+	}
+}
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'additional-libraries-regexp' > should transform correctly in 'remove' mode 1`] = `
+"import 'prop-types';
+import { Component } from 'react';
+import './custom-prop-types';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} and {this.props.friends.join(", ")} to{" "}
+				{this.state.appName}
+			</h1>
+		);
+	}
+}
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'additional-libraries-regexp' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+import CustomPropTypes from './custom-prop-types';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} and {this.props.friends.join(", ")} to{" "}
+				{this.state.appName}
+			</h1>
+		);
+	}
+}
+
+process.env.NODE_ENV !== "production" ? Greeting.propTypes = {
+	name: PropTypes.string.isRequired,
+	friends: CustomPropTypes.customValidator,
+} : void 0;
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'additional-libraries-regexp' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+import CustomPropTypes from './custom-prop-types';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} and {this.props.friends.join(", ")} to{" "}
+				{this.state.appName}
+			</h1>
+		);
+	}
+}
+
+Greeting.propTypes = process.env.NODE_ENV !== "production" ? {
+	name: PropTypes.string.isRequired,
+	friends: CustomPropTypes.customValidator,
+} : {};
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'additional-libraries-regexp' > should transform correctly with fixture options 1`] = `
+"import 'prop-types';
+import { Component } from 'react';
+import './custom-prop-types';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} and {this.props.friends.join(", ")} to{" "}
+				{this.state.appName}
+			</h1>
+		);
+	}
+}
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'bugfix-169' > should transform correctly in 'remove' mode 1`] = `
+"class Test extends React.Component {
+
+}"
+`;
+
+exports[`'rollup' bundler > 'bugfix-169' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"class Test extends React.Component {
+
+}
+process.env.NODE_ENV !== "production" ? Test.propTypes = {
+		columns: PropTypes.shape({
+			[constants.TEST]: STRING_PROP_TYPE,
+		}),
+	} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'bugfix-169' > should transform correctly in 'wrap' mode 1`] = `
+"class Test extends React.Component {
+
+}
+Test.propTypes = process.env.NODE_ENV !== "production" ? {
+		columns: PropTypes.shape({
+			[constants.TEST]: STRING_PROP_TYPE,
+		}),
+	} : {};"
+`;
+
+exports[`'rollup' bundler > 'bugfix-169' > should transform correctly with fixture options 1`] = `
+"class Test extends React.Component {
+
+}"
+`;
+
+exports[`'rollup' bundler > 'bugfix-175' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from 'prop-types';
+import React from 'react';
+
+const sharedPropType = PropTypes.number;
+
+class Foo extends React.Component {
+
+}
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'bugfix-175' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import React from 'react';
+
+const sharedPropType = PropTypes.number;
+
+class Foo extends React.Component {
+
+}
+process.env.NODE_ENV !== "production" ? Foo.propTypes = {
+		bar: sharedPropType,
+	} : void 0;
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'bugfix-175' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import React from 'react';
+
+const sharedPropType = PropTypes.number;
+
+class Foo extends React.Component {
+
+}
+Foo.propTypes = process.env.NODE_ENV !== "production" ? {
+		bar: sharedPropType,
+	} : {};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'bugfix-175' > should transform correctly with fixture options 1`] = `
+"import PropTypes from 'prop-types';
+import React from 'react';
+
+const sharedPropType = PropTypes.number;
+
+class Foo extends React.Component {
+
+}
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'bugfix-assignment' > should transform correctly in 'remove' mode 1`] = `
+"var App = {
+	init: function (assets) {
+		assets = assets || {};
+		if (assets.templates) {
+			TemplateStore.init(assets.templates);
+		}
+	},
+};
+
+const FormattedPlural = () => <div />;
+
+process.env.NODE_ENV !== "production"
+	? (void 0)
+	: void 0;"
+`;
+
+exports[`'rollup' bundler > 'bugfix-assignment' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"var App = {
+	init: function (assets) {
+		assets = assets || {};
+		if (assets.templates) {
+			TemplateStore.init(assets.templates);
+		}
+	},
+};
+
+const FormattedPlural = () => <div />;
+
+process.env.NODE_ENV !== "production"
+	? (void 0)
+	: void 0;"
+`;
+
+exports[`'rollup' bundler > 'bugfix-assignment' > should transform correctly in 'wrap' mode 1`] = `
+"var App = {
+	init: function (assets) {
+		assets = assets || {};
+		if (assets.templates) {
+			TemplateStore.init(assets.templates);
+		}
+	},
+};
+
+const FormattedPlural = () => <div />;
+
+process.env.NODE_ENV !== "production"
+	? (FormattedPlural.propTypes = process.env.NODE_ENV !== "production" ? {
+			value: PropTypes.any.isRequired,
+		} : {})
+	: void 0;"
+`;
+
+exports[`'rollup' bundler > 'bugfix-assignment' > should transform correctly with fixture options 1`] = `
+"var App = {
+	init: function (assets) {
+		assets = assets || {};
+		if (assets.templates) {
+			TemplateStore.init(assets.templates);
+		}
+	},
+};
+
+const FormattedPlural = () => <div />;
+
+process.env.NODE_ENV !== "production"
+	? (void 0)
+	: void 0;"
+`;
+
+exports[`'rollup' bundler > 'class-comment-annotation' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from 'prop-types';
+import 'react';
+import ParentComponent from './Parent';
+
+class Foo extends ParentComponent {
+	render() {}
+}
+
+Foo.propTypes /* remove-proptypes */ = {
+	bar: PropTypes.string.isRequired,
+};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'class-comment-annotation' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import 'react';
+import ParentComponent from './Parent';
+
+class Foo extends ParentComponent {
+	render() {}
+}
+
+Foo.propTypes /* remove-proptypes */ = {
+	bar: PropTypes.string.isRequired,
+};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'class-comment-annotation' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import 'react';
+import ParentComponent from './Parent';
+
+class Foo extends ParentComponent {
+	render() {}
+}
+
+Foo.propTypes /* remove-proptypes */ = {
+	bar: PropTypes.string.isRequired,
+};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'class-comment-annotation' > should transform correctly with fixture options 1`] = `
+"import PropTypes from 'prop-types';
+import 'react';
+import ParentComponent from './Parent';
+
+class Foo extends ParentComponent {
+	render() {}
+}
+
+Foo.propTypes /* remove-proptypes */ = {
+	bar: PropTypes.string.isRequired,
+};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'class-name-matchers' > should transform correctly in 'remove' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+	render() {}
+}
+
+Foo.propTypes = {
+	bar: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'class-name-matchers' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+	render() {}
+}
+
+Foo.propTypes = {
+	bar: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'class-name-matchers' > should transform correctly in 'wrap' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+	render() {}
+}
+
+Foo.propTypes = {
+	bar: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'class-name-matchers' > should transform correctly with fixture options 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'class-name-matchers-no-match' > should transform correctly in 'remove' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+	render() {}
+}
+
+Foo.propTypes = {
+	bar: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'class-name-matchers-no-match' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+	render() {}
+}
+
+Foo.propTypes = {
+	bar: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'class-name-matchers-no-match' > should transform correctly in 'wrap' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+	render() {}
+}
+
+Foo.propTypes = {
+	bar: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'class-name-matchers-no-match' > should transform correctly with fixture options 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+	render() {}
+}
+
+Foo.propTypes = {
+	bar: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'const-in-anonymous-validator' > should transform correctly in 'remove' mode 1`] = `
+"import 'react';
+
+const Component = () => <div />;
+
+const referencedPropTypes = {
+	variant3: () => {
+		const willBeWrapped = 1;
+		return null;
+	},
+};
+
+export { Component as default };"
+`;
+
+exports[`'rollup' bundler > 'const-in-anonymous-validator' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { PropTypes } from 'react';
+
+const Component = () => <div />;
+
+const referencedPropTypes = {
+	variant3: () => {
+		const willBeWrapped = 1;
+		return null;
+	},
+};
+
+process.env.NODE_ENV !== "production" ? Component.propTypes = {
+	variant1: (props) => {
+		const variants = [null];
+		return variantſ[0];
+	},
+	variant2: chainPropTypes(PropTypes.oneOf(["foo"]), (props) => {
+		const deprecatedVariants = [
+			"display4",
+			"display3",
+			"display2",
+			"display1",
+			"headline",
+			"title",
+			"subheading",
+		];
+
+		return null;
+	}),
+	...referencedPropTypes,
+} : void 0;
+
+export { Component as default };"
+`;
+
+exports[`'rollup' bundler > 'const-in-anonymous-validator' > should transform correctly in 'wrap' mode 1`] = `
+"import { PropTypes } from 'react';
+
+const Component = () => <div />;
+
+const referencedPropTypes = {
+	variant3: () => {
+		const willBeWrapped = 1;
+		return null;
+	},
+};
+
+Component.propTypes = process.env.NODE_ENV !== "production" ? {
+	variant1: (props) => {
+		const variants = [null];
+		return variantſ[0];
+	},
+	variant2: chainPropTypes(PropTypes.oneOf(["foo"]), (props) => {
+		const deprecatedVariants = [
+			"display4",
+			"display3",
+			"display2",
+			"display1",
+			"headline",
+			"title",
+			"subheading",
+		];
+
+		return null;
+	}),
+	...referencedPropTypes,
+} : {};
+
+export { Component as default };"
+`;
+
+exports[`'rollup' bundler > 'const-in-anonymous-validator' > should transform correctly with fixture options 1`] = `
+"import 'react';
+
+const Component = () => <div />;
+
+const referencedPropTypes = {
+	variant3: () => {
+		const willBeWrapped = 1;
+		return null;
+	},
+};
+
+export { Component as default };"
+`;
+
+exports[`'rollup' bundler > 'create-class' > should transform correctly in 'remove' mode 1`] = `
+"var _react2 = require("react");
+var PropTypes = require("prop-types");
+
+// react >= 15.6
+var Class1 = _react2.default.createClass({
+	displayName: "Class1",
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});
+
+// react < 15.6
+var Class2 = _react2.default.createClass({
+	displayName: "Class2",
+	propTypes: {
+		foo: _react2.default.PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'create-class' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"var _react2 = require("react");
+var PropTypes = require("prop-types");
+
+// react >= 15.6
+var Class1 = _react2.default.createClass({
+	displayName: "Class1",
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});
+
+// react < 15.6
+var Class2 = _react2.default.createClass({
+	displayName: "Class2",
+	propTypes: {
+		foo: _react2.default.PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'create-class' > should transform correctly in 'wrap' mode 1`] = `
+"var _react2 = require("react");
+var PropTypes = require("prop-types");
+
+// react >= 15.6
+var Class1 = _react2.default.createClass({
+	displayName: "Class1",
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});
+
+// react < 15.6
+var Class2 = _react2.default.createClass({
+	displayName: "Class2",
+	propTypes: {
+		foo: _react2.default.PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'create-class' > should transform correctly with fixture options 1`] = `
+"var _react2 = require("react");
+var PropTypes = require("prop-types");
+
+// react >= 15.6
+var Class1 = _react2.default.createClass({
+	displayName: "Class1",
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});
+
+// react < 15.6
+var Class2 = _react2.default.createClass({
+	displayName: "Class2",
+	propTypes: {
+		foo: _react2.default.PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'dont-remove-used-import' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} to {this.state.appName}
+			</h1>
+		);
+	}
+}
+
+Greeting.contextTypes = {
+	store: PropTypes.object,
+};
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'dont-remove-used-import' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} to {this.state.appName}
+			</h1>
+		);
+	}
+}
+
+process.env.NODE_ENV !== "production" ? Greeting.propTypes = {
+	name: PropTypes.string.isRequired,
+} : void 0;
+
+Greeting.contextTypes = {
+	store: PropTypes.object,
+};
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'dont-remove-used-import' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} to {this.state.appName}
+			</h1>
+		);
+	}
+}
+
+Greeting.propTypes = process.env.NODE_ENV !== "production" ? {
+	name: PropTypes.string.isRequired,
+} : {};
+
+Greeting.contextTypes = {
+	store: PropTypes.object,
+};
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'dont-remove-used-import' > should transform correctly with fixture options 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+
+class Greeting extends Component {
+	constructor(props, context) {
+		super(props, context);
+		const appName = context.store.getState().appName;
+		this.state = {
+			appName: appName,
+		};
+	}
+
+	render() {
+		return (
+			<h1>
+				Welcome {this.props.name} to {this.state.appName}
+			</h1>
+		);
+	}
+}
+
+Greeting.contextTypes = {
+	store: PropTypes.object,
+};
+
+export { Greeting as default };"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property' > should transform correctly in 'remove' mode 1`] = `
+"class Foo1 extends React.Component {
+	render() {}
+}
+
+class Foo2 extends React.PureComponent {
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"class Foo1 extends React.Component {
+	render() {}
+}
+
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = {
+	bar1: PropTypes.string,
+} : void 0;
+
+class Foo2 extends React.PureComponent {
+	render() {}
+}
+
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = {
+	bar2: PropTypes.string,
+} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property' > should transform correctly in 'wrap' mode 1`] = `
+"class Foo1 extends React.Component {
+	render() {}
+}
+
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? {
+	bar1: PropTypes.string,
+} : {};
+
+class Foo2 extends React.PureComponent {
+	render() {}
+}
+
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? {
+	bar2: PropTypes.string,
+} : {};"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property' > should transform correctly with fixture options 1`] = `
+"class Foo1 extends React.Component {
+	render() {}
+}
+
+class Foo2 extends React.PureComponent {
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property-variable' > should transform correctly in 'remove' mode 1`] = `
+"const propTypes = {
+	foo: PropTypes.string,
+};
+
+class Foo extends React.Component {
+	render() {}
+}
+
+class Getter extends React.Component {
+	get foo() {
+		return { foo: PropTypes.string };
+	}
+
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property-variable' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"const propTypes = {
+	foo: PropTypes.string,
+};
+
+class Foo extends React.Component {
+	render() {}
+}
+
+process.env.NODE_ENV !== "production" ? Foo.propTypes = propTypes : void 0;
+
+class Getter extends React.Component {
+	get foo() {
+		return { foo: PropTypes.string };
+	}
+
+	render() {}
+}
+
+process.env.NODE_ENV !== "production" ? Getter.propTypes = Getter.foo : void 0;"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property-variable' > should transform correctly in 'wrap' mode 1`] = `
+"const propTypes = {
+	foo: PropTypes.string,
+};
+
+class Foo extends React.Component {
+	render() {}
+}
+
+Foo.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+
+class Getter extends React.Component {
+	get foo() {
+		return { foo: PropTypes.string };
+	}
+
+	render() {}
+}
+
+Getter.propTypes = process.env.NODE_ENV !== "production" ? Getter.foo : {};"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property-variable' > should transform correctly with fixture options 1`] = `
+"const propTypes = {
+	foo: PropTypes.string,
+};
+
+class Foo extends React.Component {
+	render() {}
+}
+
+class Getter extends React.Component {
+	get foo() {
+		return { foo: PropTypes.string };
+	}
+
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property-variable-exp…' > should transform correctly in 'remove' mode 1`] = `
+"const propTypes = {
+	foo: PropTypes.string,
+};
+
+class Foo extends React.Component {
+	render() {}
+}
+
+export { propTypes };"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property-variable-exp…' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"const propTypes = {
+	foo: PropTypes.string,
+};
+
+class Foo extends React.Component {
+	render() {}
+}
+
+process.env.NODE_ENV !== "production" ? Foo.propTypes = propTypes : void 0;
+
+export { propTypes };"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property-variable-exp…' > should transform correctly in 'wrap' mode 1`] = `
+"const propTypes = {
+	foo: PropTypes.string,
+};
+
+class Foo extends React.Component {
+	render() {}
+}
+
+Foo.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+
+export { propTypes };"
+`;
+
+exports[`'rollup' bundler > 'es-class-assign-property-variable-exp…' > should transform correctly with fixture options 1`] = `
+"const propTypes = {
+	foo: PropTypes.string,
+};
+
+class Foo extends React.Component {
+	render() {}
+}
+
+export { propTypes };"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-component' > should transform correctly in 'remove' mode 1`] = `
+"class Foo1 extends Component {
+
+	render() {}
+}
+
+class Foo2 extends Component {
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-component' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"class Foo1 extends Component {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = {
+		foo1: PropTypes.string,
+	} : void 0;
+
+class Foo2 extends Component {
+	render() {}
+}
+
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = {
+	foo2: PropTypes.string,
+} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-component' > should transform correctly in 'wrap' mode 1`] = `
+"class Foo1 extends Component {
+
+	render() {}
+}
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? {
+		foo1: PropTypes.string,
+	} : {};
+
+class Foo2 extends Component {
+	render() {}
+}
+
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo2: PropTypes.string,
+} : {};"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-component' > should transform correctly with fixture options 1`] = `
+"class Foo1 extends Component {
+
+	render() {}
+}
+
+class Foo2 extends Component {
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-deopt' > should transform correctly in 'remove' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-deopt' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo.propTypes = {
+		foo: PropTypes.string.isRequired,
+	} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-deopt' > should transform correctly in 'wrap' mode 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+
+	render() {}
+}
+Foo.propTypes = process.env.NODE_ENV !== "production" ? {
+		foo: PropTypes.string.isRequired,
+	} : {};"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-deopt' > should transform correctly with fixture options 1`] = `
+"import BaseComponent from 'components/base';
+
+class Foo extends BaseComponent {
+
+	render() {}
+}"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-global-base-component' > should transform correctly in 'remove' mode 1`] = `
+"class Foo1 extends GlobalComponent {
+
+	render() {}
+}
+
+class Foo2 extends GlobalComponent {
+	render() {}
+}
+
+Foo2.propTypes = {
+	foo2: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-global-base-component' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"class Foo1 extends GlobalComponent {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = {
+		foo1: PropTypes.string,
+	} : void 0;
+
+class Foo2 extends GlobalComponent {
+	render() {}
+}
+
+Foo2.propTypes = {
+	foo2: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-global-base-component' > should transform correctly in 'wrap' mode 1`] = `
+"class Foo1 extends GlobalComponent {
+
+	render() {}
+}
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? {
+		foo1: PropTypes.string,
+	} : {};
+
+class Foo2 extends GlobalComponent {
+	render() {}
+}
+
+Foo2.propTypes = {
+	foo2: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'es-class-extend-global-base-component' > should transform correctly with fixture options 1`] = `
+"class Foo1 extends GlobalComponent {
+
+	render() {}
+}
+
+class Foo2 extends GlobalComponent {
+	render() {}
+}
+
+Foo2.propTypes = {
+	foo2: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'es-class-inheritance' > should transform correctly in 'remove' mode 1`] = `
+"class PureRenderComponent extends Component {}
+
+class Foo1 extends PureRenderComponent {
+
+	render() {}
+}
+
+class Foo2 extends PureRenderComponent {
+	render() {}
+}
+
+Foo2.propTypes = {
+	foo2: PropTypes.string.isRequired,
+};
+
+// With no inheritance
+class Foo3 {
+
+	render() {}
+}
+
+export { Foo3 };"
+`;
+
+exports[`'rollup' bundler > 'es-class-inheritance' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"class PureRenderComponent extends Component {}
+
+class Foo1 extends PureRenderComponent {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = {
+		foo1: PropTypes.string.isRequired,
+	} : void 0;
+
+class Foo2 extends PureRenderComponent {
+	render() {}
+}
+
+Foo2.propTypes = {
+	foo2: PropTypes.string.isRequired,
+};
+
+// With no inheritance
+class Foo3 {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo3.propTypes = {
+		foo3: PropTypes.string,
+	} : void 0;
+
+export { Foo3 };"
+`;
+
+exports[`'rollup' bundler > 'es-class-inheritance' > should transform correctly in 'wrap' mode 1`] = `
+"class PureRenderComponent extends Component {}
+
+class Foo1 extends PureRenderComponent {
+
+	render() {}
+}
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? {
+		foo1: PropTypes.string.isRequired,
+	} : {};
+
+class Foo2 extends PureRenderComponent {
+	render() {}
+}
+
+Foo2.propTypes = {
+	foo2: PropTypes.string.isRequired,
+};
+
+// With no inheritance
+class Foo3 {
+
+	render() {}
+}
+Foo3.propTypes = process.env.NODE_ENV !== "production" ? {
+		foo3: PropTypes.string,
+	} : {};
+
+export { Foo3 };"
+`;
+
+exports[`'rollup' bundler > 'es-class-inheritance' > should transform correctly with fixture options 1`] = `
+"class PureRenderComponent extends Component {}
+
+class Foo1 extends PureRenderComponent {
+
+	render() {}
+}
+
+class Foo2 extends PureRenderComponent {
+	render() {}
+}
+
+Foo2.propTypes = {
+	foo2: PropTypes.string.isRequired,
+};
+
+// With no inheritance
+class Foo3 {
+
+	render() {}
+}
+
+export { Foo3 };"
+`;
+
+exports[`'rollup' bundler > 'es-class-no-name' > should transform correctly in 'remove' mode 1`] = `
+"class actual extends React.Component {
+
+	render() {}
+}
+
+export { actual as default };"
+`;
+
+exports[`'rollup' bundler > 'es-class-no-name' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"class actual extends React.Component {
+	static propTypes = {
+		foo: PropTypes.string,
+	};
+
+	render() {}
+}
+
+export { actual as default };"
+`;
+
+exports[`'rollup' bundler > 'es-class-no-name' > should transform correctly in 'wrap' mode 1`] = `
+"class actual extends React.Component {
+	static propTypes = {
+		foo: PropTypes.string,
+	};
+
+	render() {}
+}
+
+export { actual as default };"
+`;
+
+exports[`'rollup' bundler > 'es-class-no-name' > should transform correctly with fixture options 1`] = `
+"class actual extends React.Component {
+
+	render() {}
+}
+
+export { actual as default };"
+`;
+
+exports[`'rollup' bundler > 'es-class-static-property' > should transform correctly in 'remove' mode 1`] = `
+"class Foo1 extends React.Component {
+
+	render() {}
+}
+
+class Foo2 extends React.Component {
+
+	render() {}
+}
+
+export { Foo2 as default };"
+`;
+
+exports[`'rollup' bundler > 'es-class-static-property' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"class Foo1 extends React.Component {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = {
+		bar1: PropTypes.string,
+	} : void 0;
+
+class Foo2 extends React.Component {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = {
+		bar2: PropTypes.string,
+	} : void 0;
+
+export { Foo2 as default };"
+`;
+
+exports[`'rollup' bundler > 'es-class-static-property' > should transform correctly in 'wrap' mode 1`] = `
+"class Foo1 extends React.Component {
+
+	render() {}
+}
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? {
+		bar1: PropTypes.string,
+	} : {};
+
+class Foo2 extends React.Component {
+
+	render() {}
+}
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? {
+		bar2: PropTypes.string,
+	} : {};
+
+export { Foo2 as default };"
+`;
+
+exports[`'rollup' bundler > 'es-class-static-property' > should transform correctly with fixture options 1`] = `
+"class Foo1 extends React.Component {
+
+	render() {}
+}
+
+class Foo2 extends React.Component {
+
+	render() {}
+}
+
+export { Foo2 as default };"
+`;
+
+exports[`'rollup' bundler > 'ignore-filenames' > should transform correctly in 'remove' mode 1`] = `
+"import { SomeComponent } from './SomeComponent';
+
+const propTypes = {
+	value: SomeComponent.propTypes.value,
+};
+
+function AnotherComponent(props) {
+	return <SomeComponent value={props.value} />;
+}
+
+export { AnotherComponent };"
+`;
+
+exports[`'rollup' bundler > 'ignore-filenames' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { SomeComponent } from './SomeComponent';
+
+const propTypes = {
+	value: SomeComponent.propTypes.value,
+};
+
+function AnotherComponent(props) {
+	return <SomeComponent value={props.value} />;
+}
+
+process.env.NODE_ENV !== "production" ? AnotherComponent.propTypes = propTypes : void 0;
+
+export { AnotherComponent };"
+`;
+
+exports[`'rollup' bundler > 'ignore-filenames' > should transform correctly in 'wrap' mode 1`] = `
+"import { SomeComponent } from './SomeComponent';
+
+const propTypes = {
+	value: SomeComponent.propTypes.value,
+};
+
+function AnotherComponent(props) {
+	return <SomeComponent value={props.value} />;
+}
+
+AnotherComponent.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+
+export { AnotherComponent };"
+`;
+
+exports[`'rollup' bundler > 'ignore-filenames' > should transform correctly with fixture options 1`] = `
+"import { SomeComponent } from './SomeComponent';
+
+const propTypes = {
+	value: SomeComponent.propTypes.value,
+};
+
+function AnotherComponent(props) {
+	return <SomeComponent value={props.value} />;
+}
+
+AnotherComponent.propTypes = propTypes;
+
+export { AnotherComponent };"
+`;
+
+exports[`'rollup' bundler > 'issue-106' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from 'prop-types';
+import React, { Component, createElement } from 'react';
+
+class RouteNode extends Component {
+	render() {
+		const { previousRoute, route } = this.state;
+		return createElement(
+			RouteSegment,
+			Object.assign({}, this.props, route, previousRoute),
+		);
+	}
+}
+
+const storeName = "storeName";
+
+RouteNode.wrappedComponent.propTypes /* remove-proptypes */ = {
+	[storeName]: PropTypes.object.isRequired,
+};
+
+class BaseLink extends Component {
+	render() {
+		return React.createElement(
+			"a",
+			{ href, className, onClick },
+			this.props.children,
+		);
+	}
+}"
+`;
+
+exports[`'rollup' bundler > 'issue-106' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import React, { Component, createElement } from 'react';
+
+class RouteNode extends Component {
+	render() {
+		const { previousRoute, route } = this.state;
+		return createElement(
+			RouteSegment,
+			Object.assign({}, this.props, route, previousRoute),
+		);
+	}
+}
+
+const storeName = "storeName";
+
+RouteNode.wrappedComponent.propTypes /* remove-proptypes */ = {
+	[storeName]: PropTypes.object.isRequired,
+};
+
+class BaseLink extends Component {
+	render() {
+		return React.createElement(
+			"a",
+			{ href, className, onClick },
+			this.props.children,
+		);
+	}
+}
+
+process.env.NODE_ENV !== "production" ? BaseLink.propTypes = {
+	routeOptions: PropTypes.object,
+	[storeName]: PropTypes.object,
+	route: PropTypes.object,
+	["previousRoute"]: PropTypes.object,
+} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'issue-106' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import React, { Component, createElement } from 'react';
+
+class RouteNode extends Component {
+	render() {
+		const { previousRoute, route } = this.state;
+		return createElement(
+			RouteSegment,
+			Object.assign({}, this.props, route, previousRoute),
+		);
+	}
+}
+
+const storeName = "storeName";
+
+RouteNode.wrappedComponent.propTypes /* remove-proptypes */ = {
+	[storeName]: PropTypes.object.isRequired,
+};
+
+class BaseLink extends Component {
+	render() {
+		return React.createElement(
+			"a",
+			{ href, className, onClick },
+			this.props.children,
+		);
+	}
+}
+
+BaseLink.propTypes = process.env.NODE_ENV !== "production" ? {
+	routeOptions: PropTypes.object,
+	[storeName]: PropTypes.object,
+	route: PropTypes.object,
+	["previousRoute"]: PropTypes.object,
+} : {};"
+`;
+
+exports[`'rollup' bundler > 'issue-106' > should transform correctly with fixture options 1`] = `
+"import PropTypes from 'prop-types';
+import React, { Component, createElement } from 'react';
+
+class RouteNode extends Component {
+	render() {
+		const { previousRoute, route } = this.state;
+		return createElement(
+			RouteSegment,
+			Object.assign({}, this.props, route, previousRoute),
+		);
+	}
+}
+
+const storeName = "storeName";
+
+RouteNode.wrappedComponent.propTypes /* remove-proptypes */ = {
+	[storeName]: PropTypes.object.isRequired,
+};
+
+class BaseLink extends Component {
+	render() {
+		return React.createElement(
+			"a",
+			{ href, className, onClick },
+			this.props.children,
+		);
+	}
+}"
+`;
+
+exports[`'rollup' bundler > 'not-react' > should transform correctly in 'remove' mode 1`] = `
+"var foo = {
+	propTypes: {
+		foo: "bar",
+	},
+};"
+`;
+
+exports[`'rollup' bundler > 'not-react' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"var foo = {
+	propTypes: {
+		foo: "bar",
+	},
+};"
+`;
+
+exports[`'rollup' bundler > 'not-react' > should transform correctly in 'wrap' mode 1`] = `
+"var foo = {
+	propTypes: {
+		foo: "bar",
+	},
+};"
+`;
+
+exports[`'rollup' bundler > 'not-react' > should transform correctly with fixture options 1`] = `
+"var foo = {
+	propTypes: {
+		foo: "bar",
+	},
+};"
+`;
+
+exports[`'rollup' bundler > 'not-react-assign-property' > should transform correctly in 'remove' mode 1`] = `
+"var foo = {};
+foo.propTypes = {
+	foo: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'not-react-assign-property' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"var foo = {};
+foo.propTypes = {
+	foo: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'not-react-assign-property' > should transform correctly in 'wrap' mode 1`] = `
+"var foo = {};
+foo.propTypes = {
+	foo: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'not-react-assign-property' > should transform correctly with fixture options 1`] = `
+"var foo = {};
+foo.propTypes = {
+	foo: PropTypes.string,
+};"
+`;
+
+exports[`'rollup' bundler > 'react-create-class' > should transform correctly in 'remove' mode 1`] = `
+"var createReactClass = require("create-react-class");
+var PropTypes = require("prop-types");
+
+createReactClass({
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"var createReactClass = require("create-react-class");
+var PropTypes = require("prop-types");
+
+createReactClass({
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class' > should transform correctly in 'wrap' mode 1`] = `
+"var createReactClass = require("create-react-class");
+var PropTypes = require("prop-types");
+
+createReactClass({
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class' > should transform correctly with fixture options 1`] = `
+"var createReactClass = require("create-react-class");
+var PropTypes = require("prop-types");
+
+createReactClass({
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class-custom-name' > should transform correctly in 'remove' mode 1`] = `
+"var createSomethingReallySpecial = require("create-react-class");
+var PropTypes = require("prop-types");
+
+createSomethingReallySpecial({
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class-custom-name' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"var createSomethingReallySpecial = require("create-react-class");
+var PropTypes = require("prop-types");
+
+createSomethingReallySpecial({
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class-custom-name' > should transform correctly in 'wrap' mode 1`] = `
+"var createSomethingReallySpecial = require("create-react-class");
+var PropTypes = require("prop-types");
+
+createSomethingReallySpecial({
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class-custom-name' > should transform correctly with fixture options 1`] = `
+"var createSomethingReallySpecial = require("create-react-class");
+var PropTypes = require("prop-types");
+
+createSomethingReallySpecial({
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class-custom-name-no-pro…' > should transform correctly in 'remove' mode 1`] = `
+"var { createClass } = require("./notReact");
+var PropTypes = require("prop-types");
+
+var Class1 = createClass({
+	displayName: "Class1",
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class-custom-name-no-pro…' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"var { createClass } = require("./notReact");
+var PropTypes = require("prop-types");
+
+var Class1 = createClass({
+	displayName: "Class1",
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class-custom-name-no-pro…' > should transform correctly in 'wrap' mode 1`] = `
+"var { createClass } = require("./notReact");
+var PropTypes = require("prop-types");
+
+var Class1 = createClass({
+	displayName: "Class1",
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'react-create-class-custom-name-no-pro…' > should transform correctly with fixture options 1`] = `
+"var { createClass } = require("./notReact");
+var PropTypes = require("prop-types");
+
+var Class1 = createClass({
+	displayName: "Class1",
+	propTypes: {
+		foo: PropTypes.string,
+	},
+});"
+`;
+
+exports[`'rollup' bundler > 'recursive' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { cloneElement } from 'react';
+
+function Composer(props) {
+	return renderRecursive(props.children, props.components);
+}
+
+Composer.propTypes = {
+	children: PropTypes.func.isRequired,
+	components: PropTypes.arrayOf(
+		PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+	).isRequired,
+};
+
+function renderRecursive(render, remaining, results) {
+	results = results || [];
+	if (!remaining[0]) {
+		return render(results);
+	}
+
+	function nextRender(value) {
+		return renderRecursive(render, remaining.slice(1), results.concat([value]));
+	}
+
+	return typeof remaining[0] === "function"
+		? remaining[0]({ results, render: nextRender })
+		: cloneElement(remaining[0], { children: nextRender });
+}
+
+export { Composer as default };"
+`;
+
+exports[`'rollup' bundler > 'recursive' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { cloneElement } from 'react';
+
+function Composer(props) {
+	return renderRecursive(props.children, props.components);
+}
+
+Composer.propTypes = {
+	children: PropTypes.func.isRequired,
+	components: PropTypes.arrayOf(
+		PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+	).isRequired,
+};
+
+function renderRecursive(render, remaining, results) {
+	results = results || [];
+	if (!remaining[0]) {
+		return render(results);
+	}
+
+	function nextRender(value) {
+		return renderRecursive(render, remaining.slice(1), results.concat([value]));
+	}
+
+	return typeof remaining[0] === "function"
+		? remaining[0]({ results, render: nextRender })
+		: cloneElement(remaining[0], { children: nextRender });
+}
+
+export { Composer as default };"
+`;
+
+exports[`'rollup' bundler > 'recursive' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { cloneElement } from 'react';
+
+function Composer(props) {
+	return renderRecursive(props.children, props.components);
+}
+
+Composer.propTypes = {
+	children: PropTypes.func.isRequired,
+	components: PropTypes.arrayOf(
+		PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+	).isRequired,
+};
+
+function renderRecursive(render, remaining, results) {
+	results = results || [];
+	if (!remaining[0]) {
+		return render(results);
+	}
+
+	function nextRender(value) {
+		return renderRecursive(render, remaining.slice(1), results.concat([value]));
+	}
+
+	return typeof remaining[0] === "function"
+		? remaining[0]({ results, render: nextRender })
+		: cloneElement(remaining[0], { children: nextRender });
+}
+
+export { Composer as default };"
+`;
+
+exports[`'rollup' bundler > 'recursive' > should transform correctly with fixture options 1`] = `
+"import PropTypes from 'prop-types';
+import { cloneElement } from 'react';
+
+function Composer(props) {
+	return renderRecursive(props.children, props.components);
+}
+
+Composer.propTypes = {
+	children: PropTypes.func.isRequired,
+	components: PropTypes.arrayOf(
+		PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+	).isRequired,
+};
+
+function renderRecursive(render, remaining, results) {
+	results = results || [];
+	if (!remaining[0]) {
+		return render(results);
+	}
+
+	function nextRender(value) {
+		return renderRecursive(render, remaining.slice(1), results.concat([value]));
+	}
+
+	return typeof remaining[0] === "function"
+		? remaining[0]({ results, render: nextRender })
+		: cloneElement(remaining[0], { children: nextRender });
+}
+
+export { Composer as default };"
+`;
+
+exports[`'rollup' bundler > 'remove-import-proptypes' > should transform correctly in 'remove' mode 1`] = `
+"import 'prop-types';
+import { Component } from 'react';
+
+class Greeting extends Component {
+	render() {
+		return <h1>Hello, {this.props.name}</h1>;
+	}
+}"
+`;
+
+exports[`'rollup' bundler > 'remove-import-proptypes' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+
+class Greeting extends Component {
+	render() {
+		return <h1>Hello, {this.props.name}</h1>;
+	}
+}
+
+process.env.NODE_ENV !== "production" ? Greeting.propTypes = {
+	name: PropTypes.string,
+} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'remove-import-proptypes' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import { Component } from 'react';
+
+class Greeting extends Component {
+	render() {
+		return <h1>Hello, {this.props.name}</h1>;
+	}
+}
+
+Greeting.propTypes = process.env.NODE_ENV !== "production" ? {
+	name: PropTypes.string,
+} : {};"
+`;
+
+exports[`'rollup' bundler > 'remove-import-proptypes' > should transform correctly with fixture options 1`] = `
+"import { Component } from 'react';
+
+class Greeting extends Component {
+	render() {
+		return <h1>Hello, {this.props.name}</h1>;
+	}
+}"
+`;
+
+exports[`'rollup' bundler > 'shared-prop-type-variable' > should transform correctly in 'remove' mode 1`] = `
+"import React from 'react';
+import { omit } from 'underscore';
+import Bar from './bar';
+
+const { PropTypes } = React;
+
+const propTypes = {
+	foo: PropTypes.any,
+};
+
+function Foo(props) {
+	const barProps = omit(props, Object.keys(propTypes));
+	return <Bar {...barProps} />;
+}
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'shared-prop-type-variable' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import React from 'react';
+import { omit } from 'underscore';
+import Bar from './bar';
+
+const { PropTypes } = React;
+
+const propTypes = {
+	foo: PropTypes.any,
+};
+
+function Foo(props) {
+	const barProps = omit(props, Object.keys(propTypes));
+	return <Bar {...barProps} />;
+}
+
+process.env.NODE_ENV !== "production" ? Foo.propTypes = propTypes : void 0;
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'shared-prop-type-variable' > should transform correctly in 'wrap' mode 1`] = `
+"import React from 'react';
+import { omit } from 'underscore';
+import Bar from './bar';
+
+const { PropTypes } = React;
+
+const propTypes = {
+	foo: PropTypes.any,
+};
+
+function Foo(props) {
+	const barProps = omit(props, Object.keys(propTypes));
+	return <Bar {...barProps} />;
+}
+
+Foo.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'shared-prop-type-variable' > should transform correctly with fixture options 1`] = `
+"import React from 'react';
+import { omit } from 'underscore';
+import Bar from './bar';
+
+const { PropTypes } = React;
+
+const propTypes = {
+	foo: PropTypes.any,
+};
+
+function Foo(props) {
+	const barProps = omit(props, Object.keys(propTypes));
+	return <Bar {...barProps} />;
+}
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-arrow-return-function' > should transform correctly in 'remove' mode 1`] = `
+"import map from 'lodash/map';
+import 'react';
+
+var Message = ({ mapList }) => {
+	return map(mapList, (index) => {
+		return <div />;
+	});
+};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-arrow-return-function' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import map from 'lodash/map';
+import { PropTypes } from 'react';
+
+var Message = ({ mapList }) => {
+	return map(mapList, (index) => {
+		return <div />;
+	});
+};
+
+process.env.NODE_ENV !== "production" ? Message.propTypes = {
+	mapList: PropTypes.array.isRequired,
+} : void 0;
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-arrow-return-function' > should transform correctly in 'wrap' mode 1`] = `
+"import map from 'lodash/map';
+import { PropTypes } from 'react';
+
+var Message = ({ mapList }) => {
+	return map(mapList, (index) => {
+		return <div />;
+	});
+};
+
+Message.propTypes = process.env.NODE_ENV !== "production" ? {
+	mapList: PropTypes.array.isRequired,
+} : {};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-arrow-return-function' > should transform correctly with fixture options 1`] = `
+"import map from 'lodash/map';
+import 'react';
+
+var Message = ({ mapList }) => {
+	return map(mapList, (index) => {
+		return <div />;
+	});
+};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-force-removal' > should transform correctly in 'remove' mode 1`] = `
+"import 'react';
+
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+
+	if (messageTxt === null) {
+		return;
+	}
+
+	return (
+		<div className={"alert alert-" + messageType} role="alert">
+			{messageTxt}
+		</div>
+	);
+};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-force-removal' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { PropTypes } from 'react';
+
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+
+	if (messageTxt === null) {
+		return;
+	}
+
+	return (
+		<div className={"alert alert-" + messageType} role="alert">
+			{messageTxt}
+		</div>
+	);
+};
+
+process.env.NODE_ENV !== "production" ? Message.propTypes /* remove-proptypes */ = {
+	isFetching: PropTypes.bool.isRequired,
+	isSuccess: PropTypes.bool.isRequired,
+	isFailure: PropTypes.bool.isRequired,
+	errorMsg: PropTypes.string.isRequired,
+} : void 0;
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-force-removal' > should transform correctly in 'wrap' mode 1`] = `
+"import { PropTypes } from 'react';
+
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+
+	if (messageTxt === null) {
+		return;
+	}
+
+	return (
+		<div className={"alert alert-" + messageType} role="alert">
+			{messageTxt}
+		</div>
+	);
+};
+
+Message.propTypes = process.env.NODE_ENV !== "production" ? {
+	isFetching: PropTypes.bool.isRequired,
+	isSuccess: PropTypes.bool.isRequired,
+	isFailure: PropTypes.bool.isRequired,
+	errorMsg: PropTypes.string.isRequired,
+} : {};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-force-removal' > should transform correctly with fixture options 1`] = `
+"import 'react';
+
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+
+	if (messageTxt === null) {
+		return;
+	}
+
+	return (
+		<div className={"alert alert-" + messageType} role="alert">
+			{messageTxt}
+		</div>
+	);
+};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-functional-components' > should transform correctly in 'remove' mode 1`] = `
+"const Foo1 = () => <div />;
+
+const Foo2 = () => {
+	return <div />;
+};
+
+const Foo3 = function () {
+	switch (true) {
+		case true:
+			if (true) {
+				return <div />;
+			} else {
+				return <span />;
+			}
+			break;
+	}
+};
+
+function Foo4() {
+	return <div />;
+}
+
+function Foo5() {
+	const bar5 = function () {
+		return <div />;
+	};
+
+	return bar5();
+}
+
+function Foo6() {
+	var result = bar6();
+
+	return result;
+
+	function bar6() {
+		return <div />;
+	}
+}
+
+function Foo7() {
+	const shallow = {
+		shallowMember() {
+			return <div />;
+		},
+	};
+	return shallow.shallowMember();
+}
+
+function Foo8() {
+	const obj = {
+		deep: {
+			member() {
+				return <div />;
+			},
+		},
+	};
+	return obj.deep.member();
+}
+
+const Foo9 = () => React.createElement("div", null);
+
+const Foo10 = () => {
+	return React.createElement("div", null);
+};
+
+const Foo11 = () => true && <div />;
+
+function Foo12(props) {
+	return React.cloneElement(props.children);
+}
+
+const Foo13 = React.memo(() => true && <div />);"
+`;
+
+exports[`'rollup' bundler > 'stateless-functional-components' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"const Foo1 = () => <div />;
+
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+const Foo2 = () => {
+	return <div />;
+};
+
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+const Foo3 = function () {
+	switch (true) {
+		case true:
+			if (true) {
+				return <div />;
+			} else {
+				return <span />;
+			}
+			break;
+	}
+};
+
+process.env.NODE_ENV !== "production" ? Foo3.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+function Foo4() {
+	return <div />;
+}
+
+process.env.NODE_ENV !== "production" ? Foo4.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+function Foo5() {
+	const bar5 = function () {
+		return <div />;
+	};
+
+	return bar5();
+}
+
+process.env.NODE_ENV !== "production" ? Foo5.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+function Foo6() {
+	var result = bar6();
+
+	return result;
+
+	function bar6() {
+		return <div />;
+	}
+}
+
+process.env.NODE_ENV !== "production" ? Foo6.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+function Foo7() {
+	const shallow = {
+		shallowMember() {
+			return <div />;
+		},
+	};
+	return shallow.shallowMember();
+}
+
+process.env.NODE_ENV !== "production" ? Foo7.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+function Foo8() {
+	const obj = {
+		deep: {
+			member() {
+				return <div />;
+			},
+		},
+	};
+	return obj.deep.member();
+}
+
+process.env.NODE_ENV !== "production" ? Foo8.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+const Foo9 = () => React.createElement("div", null);
+
+process.env.NODE_ENV !== "production" ? Foo9.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+const Foo10 = () => {
+	return React.createElement("div", null);
+};
+
+process.env.NODE_ENV !== "production" ? Foo10.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+const Foo11 = () => true && <div />;
+
+process.env.NODE_ENV !== "production" ? Foo11.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+function Foo12(props) {
+	return React.cloneElement(props.children);
+}
+
+process.env.NODE_ENV !== "production" ? Foo12.propTypes = {
+	foo: PropTypes.string,
+} : void 0;
+
+const Foo13 = React.memo(() => true && <div />);
+
+process.env.NODE_ENV !== "production" ? Foo13.propTypes = {
+	foo: PropTypes.string,
+} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'stateless-functional-components' > should transform correctly in 'wrap' mode 1`] = `
+"const Foo1 = () => <div />;
+
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+const Foo2 = () => {
+	return <div />;
+};
+
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+const Foo3 = function () {
+	switch (true) {
+		case true:
+			if (true) {
+				return <div />;
+			} else {
+				return <span />;
+			}
+			break;
+	}
+};
+
+Foo3.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+function Foo4() {
+	return <div />;
+}
+
+Foo4.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+function Foo5() {
+	const bar5 = function () {
+		return <div />;
+	};
+
+	return bar5();
+}
+
+Foo5.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+function Foo6() {
+	var result = bar6();
+
+	return result;
+
+	function bar6() {
+		return <div />;
+	}
+}
+
+Foo6.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+function Foo7() {
+	const shallow = {
+		shallowMember() {
+			return <div />;
+		},
+	};
+	return shallow.shallowMember();
+}
+
+Foo7.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+function Foo8() {
+	const obj = {
+		deep: {
+			member() {
+				return <div />;
+			},
+		},
+	};
+	return obj.deep.member();
+}
+
+Foo8.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+const Foo9 = () => React.createElement("div", null);
+
+Foo9.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+const Foo10 = () => {
+	return React.createElement("div", null);
+};
+
+Foo10.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+const Foo11 = () => true && <div />;
+
+Foo11.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+function Foo12(props) {
+	return React.cloneElement(props.children);
+}
+
+Foo12.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};
+
+const Foo13 = React.memo(() => true && <div />);
+
+Foo13.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: PropTypes.string,
+} : {};"
+`;
+
+exports[`'rollup' bundler > 'stateless-functional-components' > should transform correctly with fixture options 1`] = `
+"const Foo1 = () => <div />;
+
+const Foo2 = () => {
+	return <div />;
+};
+
+const Foo3 = function () {
+	switch (true) {
+		case true:
+			if (true) {
+				return <div />;
+			} else {
+				return <span />;
+			}
+			break;
+	}
+};
+
+function Foo4() {
+	return <div />;
+}
+
+function Foo5() {
+	const bar5 = function () {
+		return <div />;
+	};
+
+	return bar5();
+}
+
+function Foo6() {
+	var result = bar6();
+
+	return result;
+
+	function bar6() {
+		return <div />;
+	}
+}
+
+function Foo7() {
+	const shallow = {
+		shallowMember() {
+			return <div />;
+		},
+	};
+	return shallow.shallowMember();
+}
+
+function Foo8() {
+	const obj = {
+		deep: {
+			member() {
+				return <div />;
+			},
+		},
+	};
+	return obj.deep.member();
+}
+
+const Foo9 = () => React.createElement("div", null);
+
+const Foo10 = () => {
+	return React.createElement("div", null);
+};
+
+const Foo11 = () => true && <div />;
+
+function Foo12(props) {
+	return React.cloneElement(props.children);
+}
+
+const Foo13 = React.memo(() => true && <div />);"
+`;
+
+exports[`'rollup' bundler > 'stateless-return-undefined' > should transform correctly in 'remove' mode 1`] = `
+"import 'react';
+
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+
+	if (messageTxt === null) {
+		return;
+	}
+
+	return (
+		<div className={"alert alert-" + messageType} role="alert">
+			{messageTxt}
+		</div>
+	);
+};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-return-undefined' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import { PropTypes } from 'react';
+
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+
+	if (messageTxt === null) {
+		return;
+	}
+
+	return (
+		<div className={"alert alert-" + messageType} role="alert">
+			{messageTxt}
+		</div>
+	);
+};
+
+process.env.NODE_ENV !== "production" ? Message.propTypes = {
+	isFetching: PropTypes.bool.isRequired,
+	isSuccess: PropTypes.bool.isRequired,
+	isFailure: PropTypes.bool.isRequired,
+	errorMsg: PropTypes.string.isRequired,
+} : void 0;
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-return-undefined' > should transform correctly in 'wrap' mode 1`] = `
+"import { PropTypes } from 'react';
+
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+
+	if (messageTxt === null) {
+		return;
+	}
+
+	return (
+		<div className={"alert alert-" + messageType} role="alert">
+			{messageTxt}
+		</div>
+	);
+};
+
+Message.propTypes = process.env.NODE_ENV !== "production" ? {
+	isFetching: PropTypes.bool.isRequired,
+	isSuccess: PropTypes.bool.isRequired,
+	isFailure: PropTypes.bool.isRequired,
+	errorMsg: PropTypes.string.isRequired,
+} : {};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'stateless-return-undefined' > should transform correctly with fixture options 1`] = `
+"import 'react';
+
+var Message = ({ isFetching, isSuccess, isFailure, errorMsg }) => {
+	let messageType;
+	let messageTxt;
+	if (isFetching) {
+		messageType = "warning";
+		messageTxt = "Pending call...";
+	} else if (isSuccess) {
+		messageType = "success";
+		messageTxt = "Repo pushed successfully";
+	} else if (isFailure) {
+		messageType = "danger";
+		messageTxt = "Something wrong occured";
+	}
+
+	if (messageTxt === null) {
+		return;
+	}
+
+	return (
+		<div className={"alert alert-" + messageType} role="alert">
+			{messageTxt}
+		</div>
+	);
+};
+
+export { Message as default };"
+`;
+
+exports[`'rollup' bundler > 'unsafe-wrap' > should transform correctly in 'remove' mode 1`] = `
+"class Foo1 extends React.Component {
+	render() {}
+}
+
+class Foo2 extends React.Component {
+
+	render() {}
+}
+
+const Foo3 = () => <div />;"
+`;
+
+exports[`'rollup' bundler > 'unsafe-wrap' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"class Foo1 extends React.Component {
+	render() {}
+}
+
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = {
+	bar1: PropTypes.string,
+} : void 0;
+
+class Foo2 extends React.Component {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = {
+		bar2: PropTypes.string,
+	} : void 0;
+
+const Foo3 = () => <div />;
+
+process.env.NODE_ENV !== "production" ? Foo3.propTypes = {
+	bar3: PropTypes.string,
+} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'unsafe-wrap' > should transform correctly in 'wrap' mode 1`] = `
+"class Foo1 extends React.Component {
+	render() {}
+}
+
+Foo1.propTypes = process.env.NODE_ENV !== "production" ? {
+	bar1: PropTypes.string,
+} : {};
+
+class Foo2 extends React.Component {
+
+	render() {}
+}
+Foo2.propTypes = process.env.NODE_ENV !== "production" ? {
+		bar2: PropTypes.string,
+	} : {};
+
+const Foo3 = () => <div />;
+
+Foo3.propTypes = process.env.NODE_ENV !== "production" ? {
+	bar3: PropTypes.string,
+} : {};"
+`;
+
+exports[`'rollup' bundler > 'unsafe-wrap' > should transform correctly with fixture options 1`] = `
+"class Foo1 extends React.Component {
+	render() {}
+}
+
+process.env.NODE_ENV !== "production" ? Foo1.propTypes = {
+	bar1: PropTypes.string,
+} : void 0;
+
+class Foo2 extends React.Component {
+
+	render() {}
+}
+process.env.NODE_ENV !== "production" ? Foo2.propTypes = {
+		bar2: PropTypes.string,
+	} : void 0;
+
+const Foo3 = () => <div />;
+
+process.env.NODE_ENV !== "production" ? Foo3.propTypes = {
+	bar3: PropTypes.string,
+} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'variable-assignment' > should transform correctly in 'remove' mode 1`] = `
+"const propTypesBasic = {
+	foo: PropTypes.string,
+};
+
+const FooBasic = () => <div />;
+
+const extraReference = {
+	bar: PropTypes.string,
+};
+
+const propTypesWithExtraReference = Object.assign({}, extraReference, {
+	foo: PropTypes.string,
+});
+
+const FooExtraReference = () => <div />;
+
+const propTypesWithExtraReferenceSpread = {
+	...extraReference,
+	...{ foo: PropTypes.string },
+	bar: PropTypes.string,
+};
+
+const FooExtraReferenceSpread = () => <div />;
+
+const propTypesWrapped = {
+	foo: PropTypes.string,
+};
+
+const FooWrapped = () => <div />;
+
+const propTypesReferenced = {
+	foo: PropTypes.string,
+};
+
+const FooReferenced = () => <div bar={propTypesReferenced} />;
+
+const propTypesExported = {
+	foo: PropTypes.string,
+};
+
+const FooExported = () => <div />;
+
+const propTypesCreateClass = { foo: PropTypes.string };
+const FooCreateClass = createReactClass({
+	propTypes: propTypesCreateClass,
+});
+
+export { propTypesExported };"
+`;
+
+exports[`'rollup' bundler > 'variable-assignment' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"const propTypesBasic = {
+	foo: PropTypes.string,
+};
+
+const FooBasic = () => <div />;
+
+process.env.NODE_ENV !== "production" ? FooBasic.propTypes = propTypesBasic : void 0;
+
+const extraReference = {
+	bar: PropTypes.string,
+};
+
+const propTypesWithExtraReference = Object.assign({}, extraReference, {
+	foo: PropTypes.string,
+});
+
+const FooExtraReference = () => <div />;
+
+process.env.NODE_ENV !== "production" ? FooExtraReference.propTypes = propTypesWithExtraReference : void 0;
+
+const propTypesWithExtraReferenceSpread = {
+	...extraReference,
+	...{ foo: PropTypes.string },
+	bar: PropTypes.string,
+};
+
+const FooExtraReferenceSpread = () => <div />;
+
+process.env.NODE_ENV !== "production" ? FooExtraReferenceSpread.propTypes = propTypesWithExtraReferenceSpread : void 0;
+
+const propTypesWrapped = {
+	foo: PropTypes.string,
+};
+
+const FooWrapped = () => <div />;
+
+process.env.NODE_ENV !== "production" ? FooWrapped.propTypes = someWrappingFunction(propTypesWrapped) : void 0;
+
+const propTypesReferenced = {
+	foo: PropTypes.string,
+};
+
+const FooReferenced = () => <div bar={propTypesReferenced} />;
+
+process.env.NODE_ENV !== "production" ? FooReferenced.propTypes = propTypesReferenced : void 0;
+
+const propTypesExported = {
+	foo: PropTypes.string,
+};
+
+const FooExported = () => <div />;
+
+process.env.NODE_ENV !== "production" ? FooExported.propTypes = propTypesExported : void 0;
+
+const propTypesCreateClass = { foo: PropTypes.string };
+const FooCreateClass = createReactClass({
+	propTypes: propTypesCreateClass,
+});
+
+export { propTypesExported };"
+`;
+
+exports[`'rollup' bundler > 'variable-assignment' > should transform correctly in 'wrap' mode 1`] = `
+"const propTypesBasic = {
+	foo: PropTypes.string,
+};
+
+const FooBasic = () => <div />;
+
+FooBasic.propTypes = process.env.NODE_ENV !== "production" ? propTypesBasic : {};
+
+const extraReference = {
+	bar: PropTypes.string,
+};
+
+const propTypesWithExtraReference = Object.assign({}, extraReference, {
+	foo: PropTypes.string,
+});
+
+const FooExtraReference = () => <div />;
+
+FooExtraReference.propTypes = process.env.NODE_ENV !== "production" ? propTypesWithExtraReference : {};
+
+const propTypesWithExtraReferenceSpread = {
+	...extraReference,
+	...{ foo: PropTypes.string },
+	bar: PropTypes.string,
+};
+
+const FooExtraReferenceSpread = () => <div />;
+
+FooExtraReferenceSpread.propTypes = process.env.NODE_ENV !== "production" ? propTypesWithExtraReferenceSpread : {};
+
+const propTypesWrapped = {
+	foo: PropTypes.string,
+};
+
+const FooWrapped = () => <div />;
+
+FooWrapped.propTypes = process.env.NODE_ENV !== "production" ? someWrappingFunction(propTypesWrapped) : {};
+
+const propTypesReferenced = {
+	foo: PropTypes.string,
+};
+
+const FooReferenced = () => <div bar={propTypesReferenced} />;
+
+FooReferenced.propTypes = process.env.NODE_ENV !== "production" ? propTypesReferenced : {};
+
+const propTypesExported = {
+	foo: PropTypes.string,
+};
+
+const FooExported = () => <div />;
+
+FooExported.propTypes = process.env.NODE_ENV !== "production" ? propTypesExported : {};
+
+const propTypesCreateClass = { foo: PropTypes.string };
+const FooCreateClass = createReactClass({
+	propTypes: propTypesCreateClass,
+});
+
+export { propTypesExported };"
+`;
+
+exports[`'rollup' bundler > 'variable-assignment' > should transform correctly with fixture options 1`] = `
+"const propTypesBasic = {
+	foo: PropTypes.string,
+};
+
+const FooBasic = () => <div />;
+
+const extraReference = {
+	bar: PropTypes.string,
+};
+
+const propTypesWithExtraReference = Object.assign({}, extraReference, {
+	foo: PropTypes.string,
+});
+
+const FooExtraReference = () => <div />;
+
+const propTypesWithExtraReferenceSpread = {
+	...extraReference,
+	...{ foo: PropTypes.string },
+	bar: PropTypes.string,
+};
+
+const FooExtraReferenceSpread = () => <div />;
+
+const propTypesWrapped = {
+	foo: PropTypes.string,
+};
+
+const FooWrapped = () => <div />;
+
+const propTypesReferenced = {
+	foo: PropTypes.string,
+};
+
+const FooReferenced = () => <div bar={propTypesReferenced} />;
+
+const propTypesExported = {
+	foo: PropTypes.string,
+};
+
+const FooExported = () => <div />;
+
+const propTypesCreateClass = { foo: PropTypes.string };
+const FooCreateClass = createReactClass({
+	propTypes: propTypesCreateClass,
+});
+
+export { propTypesExported };"
+`;
+
+exports[`'rollup' bundler > 'variable-assignment-member-expressions' > should transform correctly in 'remove' mode 1`] = `
+"const shapePropType = PropTypes.shape({
+	foo: PropTypes.string,
+});
+
+const ComponentA = () => <div />;
+
+const somePropTypes = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentB = () => <div />;
+
+const somePropTypesC = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentC = () => <div />;
+
+const somePropTypesD = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentD = () => <div />;
+const foo = { bar: "foo" };"
+`;
+
+exports[`'rollup' bundler > 'variable-assignment-member-expressions' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"const shapePropType = PropTypes.shape({
+	foo: PropTypes.string,
+});
+
+const ComponentA = () => <div />;
+process.env.NODE_ENV !== "production" ? ComponentA.propTypes = {
+	foo: shapePropType.isRequired,
+} : void 0;
+
+const somePropTypes = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentB = () => <div />;
+process.env.NODE_ENV !== "production" ? ComponentB.propTypes = {
+	foo: somePropTypes.foo.isRequired,
+} : void 0;
+
+const somePropTypesC = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentC = () => <div />;
+process.env.NODE_ENV !== "production" ? ComponentC.propTypes = {
+	foo: somePropTypesC["foo"].isRequired,
+} : void 0;
+
+const somePropTypesD = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentD = () => <div />;
+const foo = { bar: "foo" };
+process.env.NODE_ENV !== "production" ? ComponentD.propTypes = {
+	[foo.bar]: somePropTypesD["foo"].isRequired,
+} : void 0;"
+`;
+
+exports[`'rollup' bundler > 'variable-assignment-member-expressions' > should transform correctly in 'wrap' mode 1`] = `
+"const shapePropType = PropTypes.shape({
+	foo: PropTypes.string,
+});
+
+const ComponentA = () => <div />;
+ComponentA.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: shapePropType.isRequired,
+} : {};
+
+const somePropTypes = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentB = () => <div />;
+ComponentB.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: somePropTypes.foo.isRequired,
+} : {};
+
+const somePropTypesC = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentC = () => <div />;
+ComponentC.propTypes = process.env.NODE_ENV !== "production" ? {
+	foo: somePropTypesC["foo"].isRequired,
+} : {};
+
+const somePropTypesD = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentD = () => <div />;
+const foo = { bar: "foo" };
+ComponentD.propTypes = process.env.NODE_ENV !== "production" ? {
+	[foo.bar]: somePropTypesD["foo"].isRequired,
+} : {};"
+`;
+
+exports[`'rollup' bundler > 'variable-assignment-member-expressions' > should transform correctly with fixture options 1`] = `
+"const shapePropType = PropTypes.shape({
+	foo: PropTypes.string,
+});
+
+const ComponentA = () => <div />;
+
+const somePropTypes = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentB = () => <div />;
+
+const somePropTypesC = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentC = () => <div />;
+
+const somePropTypesD = {
+	foo: PropTypes.string,
+	bar: PropTypes.number,
+};
+
+const ComponentD = () => <div />;
+const foo = { bar: "foo" };"
+`;
+
+exports[`'rollup' bundler > 'variable-comment-annotation' > should transform correctly in 'remove' mode 1`] = `
+"import PropTypes from 'prop-types';
+import 'react';
+import { connect } from 'react-redux';
+import FooComponent from './FooComponent';
+
+const Foo = connect(
+	() => {},
+	() => {},
+)(FooComponent);
+
+Foo.propTypes /* remove-proptypes */ = {
+	bar: PropTypes.string.isRequired,
+};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'variable-comment-annotation' > should transform correctly in 'unsafe-wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import 'react';
+import { connect } from 'react-redux';
+import FooComponent from './FooComponent';
+
+const Foo = connect(
+	() => {},
+	() => {},
+)(FooComponent);
+
+Foo.propTypes /* remove-proptypes */ = {
+	bar: PropTypes.string.isRequired,
+};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'variable-comment-annotation' > should transform correctly in 'wrap' mode 1`] = `
+"import PropTypes from 'prop-types';
+import 'react';
+import { connect } from 'react-redux';
+import FooComponent from './FooComponent';
+
+const Foo = connect(
+	() => {},
+	() => {},
+)(FooComponent);
+
+Foo.propTypes /* remove-proptypes */ = {
+	bar: PropTypes.string.isRequired,
+};
+
+export { Foo as default };"
+`;
+
+exports[`'rollup' bundler > 'variable-comment-annotation' > should transform correctly with fixture options 1`] = `
+"import PropTypes from 'prop-types';
+import 'react';
+import { connect } from 'react-redux';
+import FooComponent from './FooComponent';
+
+const Foo = connect(
+	() => {},
+	() => {},
+)(FooComponent);
+
+Foo.propTypes /* remove-proptypes */ = {
+	bar: PropTypes.string.isRequired,
+};
+
+export { Foo as default };"
+`;

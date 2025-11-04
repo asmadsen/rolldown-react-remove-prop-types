@@ -2,13 +2,14 @@ import type { Node as BaseNode, Identifier, MemberExpression } from "estree";
 
 // Acorn adds start/end to nodes
 export type Node = BaseNode & { start: number; end: number };
+export type NodeWithLocation<T = BaseNode> = T & { start: number; end: number };
 
 /**
  * Check if a node is an Identifier
  */
 export function isIdentifier(
 	node: BaseNode | null | undefined,
-): node is Identifier {
+): node is Identifier & NodeWithLocation {
 	return node?.type === "Identifier";
 }
 
@@ -17,8 +18,21 @@ export function isIdentifier(
  */
 export function isMemberExpression(
 	node: BaseNode | null | undefined,
-): node is MemberExpression {
+): node is MemberExpression & NodeWithLocation {
 	return node?.type === "MemberExpression";
+}
+
+/**
+ * Type guard to check if a node has location information
+ */
+export function hasLocation<T = BaseNode>(
+	node: T | null | undefined,
+): node is T & { start: number; end: number } {
+	return (
+		node != null &&
+		typeof (node as { start?: number }).start === "number" &&
+		typeof (node as { end?: number }).end === "number"
+	);
 }
 
 /**
