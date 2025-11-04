@@ -39,6 +39,10 @@
 		"proptypes",
 		"optimization"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/asmadsen/rolldown-react-remove-prop-types.git"
+	},
 	"author": "",
 	"license": "MIT",
 	"packageManager": "pnpm@10.18.2",
